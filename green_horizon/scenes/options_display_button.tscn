@@ -25,6 +25,7 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "BASE_LABEL"
 label_settings = SubResource("LabelSettings_1tg0x")
+vertical_alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2

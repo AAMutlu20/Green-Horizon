@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://v4a5yo75aj1d"]
+[gd_scene load_steps=9 format=3 uid="uid://v4a5yo75aj1d"]
 
+[ext_resource type="PackedScene" uid="uid://b31g5qypb5dnd" path="res://scenes/window_node_button.tscn" id="1_frgyu"]
 [ext_resource type="PackedScene" uid="uid://c5t1858wvopdy" path="res://scenes/keybind_rebind_button.tscn" id="1_hqs05"]
 [ext_resource type="FontFile" uid="uid://b4pp8gmrt821n" path="res://assets/GUI/Font/editundo.ttf" id="1_y8ge1"]
+[ext_resource type="PackedScene" uid="uid://dsbn0ikq2tohg" path="res://scenes/resolution_node_button.tscn" id="2_6icd7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xoidw"]
 
@@ -35,10 +37,9 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 2
+current_tab = 0
 
 [node name="Video" type="TabBar" parent="TabsDisplay"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -54,26 +55,28 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="Vertical_Alignment" type="VBoxContainer" parent="TabsDisplay/Video/Margin"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabsDisplay/Video/Margin"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabsDisplay/Video/Margin/ScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 64
-alignment = 1
 
-[node name="Label" type="Label" parent="TabsDisplay/Video/Margin/Vertical_Alignment"]
+[node name="HSeparator" type="HSeparator" parent="TabsDisplay/Video/Margin/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Graphic 1"
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xoidw")
 
-[node name="Label2" type="Label" parent="TabsDisplay/Video/Margin/Vertical_Alignment"]
+[node name="Window_Mode_Button" parent="TabsDisplay/Video/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("1_frgyu")]
 layout_mode = 2
-text = "Graphic 2"
 
-[node name="Label3" type="Label" parent="TabsDisplay/Video/Margin/Vertical_Alignment"]
+[node name="HSeparator2" type="HSeparator" parent="TabsDisplay/Video/Margin/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Graphic 3"
+theme_override_constants/separation = 36
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xoidw")
 
-[node name="Label4" type="Label" parent="TabsDisplay/Video/Margin/Vertical_Alignment"]
+[node name="Resolution_Mode_Button" parent="TabsDisplay/Video/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("2_6icd7")]
 layout_mode = 2
-text = "1245"
 
 [node name="Audio" type="TabBar" parent="TabsDisplay"]
 visible = false
@@ -114,6 +117,7 @@ layout_mode = 2
 text = "ABV"
 
 [node name="Keybinds" type="TabBar" parent="TabsDisplay"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -138,7 +142,7 @@ theme_override_constants/separation = 64
 
 [node name="HSeparator" type="HSeparator" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 8
 theme_override_styles/separator = SubResource("StyleBoxEmpty_xoidw")
 
 [node name="General" type="Label" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
@@ -152,7 +156,7 @@ action_name = "close_game"
 
 [node name="HSeparator2" type="HSeparator" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 8
 theme_override_styles/separator = SubResource("StyleBoxEmpty_xoidw")
 
 [node name="Camera" type="Label" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
@@ -177,7 +181,7 @@ action_name = "cam_move_right"
 
 [node name="HSeparator3" type="HSeparator" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 8
 theme_override_styles/separator = SubResource("StyleBoxEmpty_7b3sw")
 
 [node name="Player" type="Label" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
@@ -207,7 +211,7 @@ action_name = "p_interact"
 
 [node name="HSeparator4" type="HSeparator" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 8
 theme_override_styles/separator = SubResource("StyleBoxEmpty_7b3sw")
 
 [node name="Accessibility" type="TabBar" parent="TabsDisplay"]
