@@ -6,10 +6,13 @@ const POLLUTION_MILD = 1
 const POLLUTION_POLLUTED = 2
 const POLLUTION_UNINHABITABLE = 3
 
+
 # Other Constants
 const MAX_POLLUTION = 100
 var total_tiles = 0
 var isTurn = true
+var isNight = false
+var last_pollution_spread_time = -1
 
 # Dictionary
 var pollution_levels = {}
@@ -32,7 +35,6 @@ var pollution_thresholds = {
 @onready var pollution_bar: TextureProgressBar = $"../../UI/TextureRect/HBoxContainer/PollutionBar"
 @onready var display_state: Label = $"../../UI/TextureRect/HBoxContainer/DisplayState"
 @onready var turn: Button = $"../../UI/TextureRect/HBoxContainer2/Turn"
-
 
 func initialize_pollution():
 	var left = -345
@@ -128,16 +130,106 @@ func update_pollution_ui():
 
 func handle_turn():
 	if isTurn:
-		# It's Day, allow actions
 		print("It's your turn! You can take actions.")
-		# Implement player actions here, e.g., building, modifying tiles, etc.
 	else:
-		# It's Night, restrict actions
-		print("It's not your turn. Please wait for the next phase.")
-		# No player actions allowed here
+		print("It's Night, pollution may spread.")
+
+func spread_pollution():
+	if !isNight: return
+
+	for tile_pos in pollution_levels.keys():
+		var tile_id = get_cell_source_id(tile_pos)
+		var pollution = pollution_levels[tile_pos]
+		var thresholds = pollution_thresholds.get(tile_id, {})
+		var state = determine_pollution_state(pollution, thresholds)
+		
+		if state == POLLUTION_CLEAN:
+			pass
+		elif state == POLLUTION_MILD:
+			if tile_id == 19:  # M_RIVER
+				spread_pollution_to_neighbors(tile_pos, 1.25)
+			elif tile_id == 2:  # M_WATER
+				spread_pollution_to_neighbors(tile_pos, 1.25)
+			elif tile_id == 11:  # M_FOREST
+				spread_pollution_to_neighbors(tile_pos, 1.5)
+			elif tile_id == 5:  # M_FIELD
+				spread_pollution_to_neighbors(tile_pos, 1.1)
+			elif tile_id == 23:  # M_DESERT
+				spread_pollution_to_neighbors(tile_pos, 1.4)
+			elif tile_id == 40:  # M_REFINERY
+				spread_pollution_to_neighbors(tile_pos, 1.9)
+			elif tile_id == 15:  # M_HILL
+				spread_pollution_to_neighbors(tile_pos, 1.35)
+			elif tile_id == 35:  # M_MOUNTAIN
+				spread_pollution_to_neighbors(tile_pos, 1.5)
+			elif tile_id == 27:  # M_SANDS
+				spread_pollution_to_neighbors(tile_pos, 1.4)
+			elif tile_id == 31:  # M_D_HILL
+				spread_pollution_to_neighbors(tile_pos, 1.45)
+		elif state == POLLUTION_POLLUTED:
+			if tile_id == 19:  # P_RIVER
+				spread_pollution_to_neighbors(tile_pos, 2)
+			elif tile_id == 2:  # P_WATER
+				spread_pollution_to_neighbors(tile_pos, 2.25)
+			elif tile_id == 11:  # P_FOREST
+				spread_pollution_to_neighbors(tile_pos, 2.2)
+			elif tile_id == 5:  # P_FIELD
+				spread_pollution_to_neighbors(tile_pos, 1.4)
+			elif tile_id == 23:  # P_DESERT
+				spread_pollution_to_neighbors(tile_pos, 1.4)
+			elif tile_id == 40:  # P_REFINERY
+				spread_pollution_to_neighbors(tile_pos, 1.3)
+			elif tile_id == 15:  # P_HILL
+				spread_pollution_to_neighbors(tile_pos, 1.6)
+			elif tile_id == 35:  # P_MOUNTAIN
+				spread_pollution_to_neighbors(tile_pos, 1.75)
+			elif tile_id == 27:  # P_SANDS
+				spread_pollution_to_neighbors(tile_pos, 1.6)
+			elif tile_id == 31:  # P_D_HILL
+				spread_pollution_to_neighbors(tile_pos, 1.65)
+		elif state == POLLUTION_UNINHABITABLE:
+			if tile_id == 19:  # U_RIVER
+				spread_pollution_to_neighbors(tile_pos, 2.5)
+			elif tile_id == 2:  # U_WATER
+				spread_pollution_to_neighbors(tile_pos, 2.5)
+			elif tile_id == 11:  # U_FOREST
+				spread_pollution_to_neighbors(tile_pos, 2.5)
+			elif tile_id == 5:  # U_FIELD
+				spread_pollution_to_neighbors(tile_pos, 1.5)
+			elif tile_id == 23:  # U_DESERT
+				spread_pollution_to_neighbors(tile_pos, 1.5)
+			elif tile_id == 40:  # U_REFINERY
+				spread_pollution_to_neighbors(tile_pos, 1.4)
+			elif tile_id == 15:  # U_HILL
+				spread_pollution_to_neighbors(tile_pos, 1.8)
+			elif tile_id == 35:  # U_MOUNTAIN
+				spread_pollution_to_neighbors(tile_pos, 2)
+			elif tile_id == 27:  # U_SANDS
+				spread_pollution_to_neighbors(tile_pos, 1.8)
+			elif tile_id == 31:  # U_D_HILL
+				spread_pollution_to_neighbors(tile_pos, 1.85)
+
+func spread_pollution_to_neighbors(tile_pos: Vector2i, rate: float):
+	var neighbors = get_neighbors(tile_pos)
+	for neighbor in neighbors:
+		update_pollution(neighbor, rate)
+
+func passive_pollution(tile_pos: Vector2i, rate: float):
+	update_pollution(tile_pos, rate)
+
+func get_neighbors(tile_pos: Vector2i) -> Array:
+	var neighbors = []
+	var directions = [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1), Vector2i(1, -1), Vector2i(-1, 1)]
+	for dir in directions:
+		var neighbor_pos = tile_pos + dir
+		neighbors.append(neighbor_pos)
+	return neighbors
 
 func next_turn():
 	isTurn = !isTurn
+	isNight = !isNight  
+	if isNight:
+		spread_pollution()
 	update_turn_ui()
 
 func update_turn_ui():
@@ -158,4 +250,3 @@ func _ready():
 func _process(delta):
 	if isTurn:
 		update_hover_label()
-	handle_turn()

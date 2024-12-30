@@ -460,4 +460,3 @@ layout_mode = 2
 [node name="AmbientStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("51_fmhyl")
 autoplay = true
-bus = &"Music"
