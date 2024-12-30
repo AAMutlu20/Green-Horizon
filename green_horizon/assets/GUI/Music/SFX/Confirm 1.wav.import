@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cgbjunpvo35is"
+path="res://.godot/imported/Confirm 1.wav-2c51512b8d9cac16bc3d426e21eecf75.sample"
+
+[deps]
+
+source_file="res://assets/GUI/Music/SFX/Confirm 1.wav"
+dest_files=["res://.godot/imported/Confirm 1.wav-2c51512b8d9cac16bc3d426e21eecf75.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

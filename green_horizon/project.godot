@@ -15,15 +15,24 @@ run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [display]
 
 mouse_cursor/custom_image="res://assets/GUI/Mouse/Pointer/Pointer.png"
 mouse_cursor/custom_image_hotspot=Vector2(6, 6)
 
+[editor_plugins]
+
+enabled=PackedStringArray()
+
 [file_customization]
 
 folder_colors={
 "res://assets/": "red",
+"res://audio/": "purple",
 "res://scenes/": "yellow",
 "res://scripts/": "green"
 }

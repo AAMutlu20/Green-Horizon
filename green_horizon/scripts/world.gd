@@ -5,7 +5,7 @@ extends Node2D
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 
-func _process(delta: float):
+func _process(_delta: float):
 	Escape()
 
 func Escape():

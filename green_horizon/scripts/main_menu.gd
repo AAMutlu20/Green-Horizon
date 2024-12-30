@@ -8,6 +8,7 @@ extends Control
 
 #Others
 @onready var margins: MarginContainer = $Margins
+@onready var click: AudioStreamPlayer = $Click
 
 #Scenes
 @onready var options_menu: OptionsMenu = $Options_Menu
@@ -24,22 +25,19 @@ func _ready():
 
 func on_play_down() -> void:
 	get_tree().change_scene_to_packed(start_level)
+	click.play()
 
 func on_options_down() -> void:
 	margins.visible = false
 	options_menu.set_process(true)
 	options_menu.visible = true
+	click.play()
 
 func on_exit_down() -> void:
 	get_tree().quit()
+	click.play()
 
 func on_exit_options_menu() -> void:
 	margins.visible = true
 	options_menu.visible = false
-
-func Escape():
-	if Input.is_action_just_pressed("close_game"):
-		get_tree().quit()
-
-func _process(delta: float):
-	Escape()
+	click.play()

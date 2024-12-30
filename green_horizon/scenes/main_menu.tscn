@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bgunpxx3n2af6"]
+[gd_scene load_steps=16 format=3 uid="uid://bgunpxx3n2af6"]
 
 [ext_resource type="Texture2D" uid="uid://d37i2aan2q7n4" path="res://assets/GUI/BG/Background.png" id="1_2g543"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_81371"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://ct5os7g6swept" path="res://assets/GUI/Buttons/Exit/Exit_Click.png" id="10_uh7qb"]
 [ext_resource type="Texture2D" uid="uid://dao4oipvfptoy" path="res://assets/GUI/Buttons/Exit/Exit_Hover.png" id="11_mapdg"]
 [ext_resource type="PackedScene" uid="uid://wctwg6o7g6lv" path="res://scenes/options_menu.tscn" id="13_lxgql"]
+[ext_resource type="AudioStream" uid="uid://dedko2buvekhi" path="res://assets/GUI/Music/BGM/Ludum Dare 30 06 - MU.ogg" id="14_flk3k"]
+[ext_resource type="AudioStream" uid="uid://b8j5kqhpfejbo" path="res://assets/GUI/Music/SFX/Select 1.wav" id="15_8ewhu"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -94,3 +96,12 @@ texture_hover = ExtResource("11_mapdg")
 [node name="Options_Menu" parent="." instance=ExtResource("13_lxgql")]
 visible = false
 layout_mode = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_flk3k")
+autoplay = true
+bus = &"Music"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_8ewhu")
+bus = &"SFX"

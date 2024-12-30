@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dedko2buvekhi"
+path="res://.godot/imported/Ludum Dare 30 06 - MU.ogg-2eed27e4787b722a253bd9c729a51d14.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/GUI/Music/BGM/Ludum Dare 30 06 - MU.ogg"
+dest_files=["res://.godot/imported/Ludum Dare 30 06 - MU.ogg-2eed27e4787b722a253bd9c729a51d14.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -100,22 +100,6 @@ layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Label" type="Label" parent="TabsDisplay/Audio/Margin/Vertical_Alignment"]
-layout_mode = 2
-text = "ABV"
-
-[node name="Label2" type="Label" parent="TabsDisplay/Audio/Margin/Vertical_Alignment"]
-layout_mode = 2
-text = "ABV"
-
-[node name="Label3" type="Label" parent="TabsDisplay/Audio/Margin/Vertical_Alignment"]
-layout_mode = 2
-text = "ABV"
-
-[node name="Label4" type="Label" parent="TabsDisplay/Audio/Margin/Vertical_Alignment"]
-layout_mode = 2
-text = "ABV"
-
 [node name="Keybinds" type="TabBar" parent="TabsDisplay"]
 visible = false
 layout_mode = 2
