@@ -1,9 +1,12 @@
 extends Control
 
-#Buttons
+# Buttons
 @onready var option_button: OptionButton = $HBoxContainer/OptionButton
 
-#Constants
+# Sounds
+@onready var confirm: AudioStreamPlayer = $Confirm
+
+# Constants
 const RESOLUTION_DICTIONARY: Dictionary = {
 	"1152 x 648": Vector2i(1152, 648),
 	"1280 x 720": Vector2i(1280, 720),
@@ -22,11 +25,15 @@ func add_resolution_items() -> void:
 
 func on_resolution_selected(index : int) -> void:
 	match index:
-		0: #1152 x 648
+		0: # 1152 x 648
 			DisplayServer.window_set_size(RESOLUTION_DICTIONARY.values()[index])
-		1: #1280 x 720
+			confirm.play()
+		1: # 1280 x 720
 			DisplayServer.window_set_size(RESOLUTION_DICTIONARY.values()[index])
-		2: #1920 x 1080
+			confirm.play()
+		2: # 1920 x 1080
 			DisplayServer.window_set_size(RESOLUTION_DICTIONARY.values()[index])
-		3: #2560 x 1140
+			confirm.play()
+		3: # 2560 x 1140
 			DisplayServer.window_set_size(RESOLUTION_DICTIONARY.values()[index])
+			confirm.play()

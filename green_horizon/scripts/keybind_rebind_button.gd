@@ -6,6 +6,7 @@ extends Control
 
 #Others
 @onready var label: Label = $HBoxContainer/Label
+@onready var confirm: AudioStreamPlayer = $Confirm
 
 #Exports
 @export var action_name: String = "cam_move_up"
@@ -19,9 +20,6 @@ func set_action_name() -> void:
 	label.text = "Unassigned"
 	
 	match action_name:
-		#General
-		"close_game":
-			label.text = "Exit Game"
 		#Camera
 		"cam_move_up":
 			label.text = "Camera Move Up"
@@ -45,11 +43,13 @@ func set_action_name() -> void:
 
 func set_text_for_key() -> void:
 	var action_events = InputMap.action_get_events(action_name)
-	var action_event = action_events[0]
-	var action_keycode = OS.get_keycode_string(action_event.physical_keycode)
+	if action_events.size() > 0:
+		var action_event = action_events[0]
+		var action_keycode = OS.get_keycode_string(action_event.physical_keycode)
 	
-	button.text = "%s" % action_keycode
-
+		button.text = "%s" % action_keycode
+	else:
+		button.text = "Unassigned"
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
@@ -60,11 +60,13 @@ func _on_button_toggled(toggled_on: bool) -> void:
 			if i.action_name != self.action_name:
 				i.button.toggle_mode = false
 				i.set_process_unhandled_key_input(false)
+				confirm.play()
 	else:
 		for i in get_tree().get_nodes_in_group("keybind_button"):
 			if i.action_name != self.action_name:
 				i.button.toggle_mode = true
 				i.set_process_unhandled_key_input(false)
+				confirm.play()
 		set_text_for_key()
 
 func _unhandled_key_input(event: InputEvent) -> void:

@@ -37,9 +37,10 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 
 [node name="Video" type="TabBar" parent="TabsDisplay"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -101,7 +102,6 @@ theme_override_constants/separation = 64
 alignment = 1
 
 [node name="Keybinds" type="TabBar" parent="TabsDisplay"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -125,20 +125,6 @@ layout_mode = 2
 theme_override_constants/separation = 64
 
 [node name="HSeparator" type="HSeparator" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 8
-theme_override_styles/separator = SubResource("StyleBoxEmpty_xoidw")
-
-[node name="General" type="Label" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "GENERAL SETTINGS"
-label_settings = SubResource("LabelSettings_orxvr")
-
-[node name="Keybind_Rebind_Button10" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("1_hqs05")]
-layout_mode = 2
-action_name = "close_game"
-
-[node name="HSeparator2" type="HSeparator" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
 theme_override_styles/separator = SubResource("StyleBoxEmpty_xoidw")

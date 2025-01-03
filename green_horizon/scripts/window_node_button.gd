@@ -1,9 +1,12 @@
 extends Control
 
-#Buttons
+# Buttons
 @onready var option_button: OptionButton = $HBoxContainer/OptionButton
 
-#Constants
+# Sounds
+@onready var confirm: AudioStreamPlayer = $Confirm
+
+# Constants
 const WINDOW_MODE_ARRAY: Array[String] = [
 	"Window Mode",
 	"Full-Screen",
@@ -21,15 +24,19 @@ func add_window_mode_items() -> void:
 
 func on_window_mode_selected(index : int) -> void:
 	match index:
-		0: #Window Mode
+		0: # Window Mode
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
-		1: #Fullscreen
+			confirm.play()
+		1: # Fullscreen
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
-		2: #Borderless Mode
+			confirm.play()
+		2: # Borderless Mode
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
-		3: #Borderless Fullscreen
+			confirm.play()
+		3: # Borderless Fullscreen
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+			confirm.play()
