@@ -6,6 +6,12 @@ const POLLUTION_MILD = 1
 const POLLUTION_POLLUTED = 2
 const POLLUTION_UNINHABITABLE = 3
 
+# Resources
+const ENERGY = 0
+const WOOD = 1
+const METAL = 2
+const RUBBER = 3
+const RECYCABLES = 4
 
 # Other Constants
 const MAX_POLLUTION = 100
@@ -15,8 +21,15 @@ var isNight = false
 var last_pollution_spread_time = -1
 var turns_till_growth = 0
 
+# Map Constraints
+var left = -345
+var right = 285
+var top = -270
+var bot = 330
+
 # Dictionary
 var pollution_levels = {}
+var tile_resources_at_position = {}
 
 # Tile Thresholds
 var pollution_thresholds = {
@@ -34,16 +47,68 @@ var pollution_thresholds = {
 	42: {POLLUTION_CLEAN: 0, POLLUTION_POLLUTED: 35} # C_CITY
 }
 
+# Tile Resources
+var tile_resources = {
+	6: [RECYCABLES],
+	7: [RECYCABLES],
+	8: [RECYCABLES],
+	10: [RECYCABLES],
+	11: [WOOD],
+	12: [WOOD, RECYCABLES],
+	13: [RECYCABLES],
+	15: [WOOD],
+	16: [RECYCABLES],
+	17: [RECYCABLES],
+	20: [RECYCABLES],
+	21: [RECYCABLES],
+	25: [RECYCABLES],
+	29: [RECYCABLES],
+	32: [RECYCABLES],
+	33: [RECYCABLES],
+	26: [RECYCABLES],
+	37: [RECYCABLES],
+	39: [ENERGY, RUBBER],
+	40: [ENERGY, RUBBER, RECYCABLES],
+	41: [RUBBER, RECYCABLES],
+	44: [WOOD],
+	45: [WOOD, RECYCABLES],
+	46: [WOOD, RUBBER],
+	47: [WOOD, RUBBER, RECYCABLES],
+	48: [WOOD, METAL, RUBBER],
+	49: [WOOD, METAL, RUBBER, RECYCABLES],
+	50: [ENERGY, WOOD, METAL, RUBBER, RECYCABLES],
+	51: [ENERGY, WOOD, RUBBER, METAL, RECYCABLES],
+	52: [METAL],
+	53: [METAL, RECYCABLES],
+	54: [METAL, WOOD],
+	55: [METAL, WOOD, RECYCABLES],
+	56: [METAL, WOOD],
+	57: [METAL, WOOD, RECYCABLES],
+}
+
+# Stockpile
+var main_stockpile = {
+	ENERGY: 0,
+	WOOD: 0,
+	METAL: 0,
+	RUBBER: 0,
+	RECYCABLES: 0
+}
+
 # Others
 @onready var pollution_bar: TextureProgressBar = $"../../UI/TextureRect/HBoxContainer/PollutionBar"
 @onready var display_state: Label = $"../../UI/TextureRect/HBoxContainer/DisplayState"
 @onready var turn: Button = $"../../UI/TextureRect/HBoxContainer2/Turn"
 
+# Resource Labels
+@onready var energy_count: Label = $"../../UI/TextureRect/HBoxContainer/EnergyContainer/Count"
+@onready var wood_count: Label = $"../../UI/TextureRect/HBoxContainer/WoodContainer/Count"
+@onready var metal_count: Label = $"../../UI/TextureRect/HBoxContainer/MetalContainer/Count"
+@onready var rubber_count: Label = $"../../UI/TextureRect/HBoxContainer/RubberContainer/Count"
+@onready var recycables_count: Label = $"../../UI/TextureRect/HBoxContainer/RecycablesContainer/Count"
+
+
 func initialize_pollution():
-	var left = -345
-	var right = 285
-	var top = -270
-	var bot = 330
 	total_tiles = 0
 	for x in range(left, right):
 		for y in range(top, bot):
@@ -57,6 +122,40 @@ func initialize_pollution():
 				set_tile_state(tile_pos, tile_id, state, pollution)
 				total_tiles += 1
 	update_pollution_ui()
+
+func initialize_resources():
+	for x in range(left, right):
+		for y in range(top, bot):
+			var tile_pos = Vector2i(x, y)
+			var tile_id = get_cell_source_id(tile_pos)
+			if tile_id > 0:
+				var initial_resources = {}
+				if tile_resources.has(tile_id):
+					for resource in tile_resources[tile_id]:
+						initial_resources[resource] = randi_range(0, 10)
+				tile_resources_at_position[tile_pos] = initial_resources
+
+func update_resources_based_on_pollution(tile_pos: Vector2i, pollution_state: int):
+	if tile_resources_at_position.has(tile_pos):
+		var resources = tile_resources_at_position[tile_pos]
+		match pollution_state:
+			POLLUTION_CLEAN:
+				pass
+			POLLUTION_MILD, POLLUTION_POLLUTED:
+				for resource in resources.keys():
+					if resource == ENERGY:
+						continue
+					elif resource == RECYCABLES:
+						resources[RECYCABLES] += 10
+					else:
+						resources[resource] = max(resources[resource] - 10, 0)
+
+					main_stockpile[resource] += resources[resource]
+			POLLUTION_UNINHABITABLE:
+				for resource in resources.keys():
+					resources[resource] = 0
+					main_stockpile[resource] = 0
+		update_resource_ui()
 
 func update_pollution(tile_pos: Vector2i, pollution_delta: int):
 	if pollution_levels.has(tile_pos):
@@ -76,7 +175,8 @@ func determine_pollution_state(pollution_level: int, thresholds: Dictionary) -> 
 			state = level
 	return state
 
-func set_tile_state(tile_pos: Vector2i, tile_id: int, _state: int, pollution_level: int):
+func set_tile_state(tile_pos: Vector2i, tile_id: int, state: int, pollution_level: int):
+	update_resources_based_on_pollution(tile_pos, state)
 	match tile_id:
 		2:
 			if pollution_level > 50:
@@ -467,6 +567,21 @@ func update_pollution_ui():
 		var pollution_percentage = float(total_pollution) / max_possible_pollution * 100
 		pollution_bar.value = pollution_percentage
 
+func update_ui_resources():
+	var total_resources = {ENERGY: 0, WOOD: 0, METAL: 0, RUBBER: 0, RECYCABLES: 0}
+	for resources in tile_resources_at_position.values():
+		for resource in resources.items():
+			for amount in resources.items():
+				total_resources[resource] += amount
+
+func update_resource_ui():
+	energy_count.text = str(main_stockpile[ENERGY])
+	wood_count.text = str(main_stockpile[WOOD])
+	metal_count.text = str(main_stockpile[METAL])
+	rubber_count.text = str(main_stockpile[RUBBER])
+	recycables_count.text = str(main_stockpile[RECYCABLES])
+
+
 func end_turn():
 	for tile_pos in pollution_levels.keys():
 		var tile_id = get_cell_source_id(tile_pos)
@@ -475,7 +590,8 @@ func end_turn():
 			var thresholds = pollution_thresholds.get(tile_id, {})
 			var state = determine_pollution_state(pollution, thresholds)
 			set_tile_state(tile_pos, tile_id, state, pollution)
-	update_pollution_ui()
+			update_resources_based_on_pollution(tile_pos, state)
+	update_resource_ui()
 
 func handle_turn():
 	if isTurn:
@@ -492,10 +608,11 @@ func spread_pollution():
 
 func next_turn():
 	isTurn = !isTurn
-	isNight = !isNight  
+	isNight = !isNight
 	if isNight:
 		spread_pollution()
 		turns_till_growth += 1
+		update_resource_ui()
 	update_turn_ui()
 
 func update_turn_ui():
@@ -510,6 +627,8 @@ func _on_turn_button_toggled():
 func _ready():
 	print(pollution_bar)
 	initialize_pollution()
+	initialize_resources()
+	update_resource_ui()
 	handle_turn()
 	turn.connect("pressed", Callable(self, "_on_turn_button_toggled"))
 
