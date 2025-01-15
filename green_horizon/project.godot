@@ -13,7 +13,8 @@ config_version=5
 config/name="Green_Horizon"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+config/icon="res://assets/GUI/BG/Mini.png"
 
 [audio]
 

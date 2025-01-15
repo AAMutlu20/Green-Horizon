@@ -86,6 +86,18 @@ var tile_resources = {
 	57: [METAL, WOOD, RECYCABLES],
 }
 
+var tile_names = {
+	2: "River",
+	3: "Water Plant",
+	15: "Hill",
+	4: "Mine",
+	35: "Mountain",
+	5: "Desert Mine",
+	23: "Desert",
+	39: "Refinery",
+	27: "Desert Sands",
+	6: "Solar Panel"
+}
 # Stockpile
 var main_stockpile = {
 	ENERGY: 0,
@@ -99,6 +111,7 @@ var main_stockpile = {
 @onready var pollution_bar: TextureProgressBar = $"../../UI/TextureRect/HBoxContainer/PollutionBar"
 @onready var display_state: Label = $"../../UI/TextureRect/HBoxContainer/DisplayState"
 @onready var turn: Button = $"../../UI/TextureRect/HBoxContainer2/Turn"
+@onready var popup_scene: PackedScene
 
 # Resource Labels
 @onready var energy_count: Label = $"../../UI/TextureRect/HBoxContainer/EnergyContainer/Count"
@@ -132,7 +145,7 @@ func initialize_resources():
 				var initial_resources = {}
 				if tile_resources.has(tile_id):
 					for resource in tile_resources[tile_id]:
-						initial_resources[resource] = randi_range(0, 10)
+						initial_resources[resource] = randi_range(0, 1)
 				tile_resources_at_position[tile_pos] = initial_resources
 
 func update_resources_based_on_pollution(tile_pos: Vector2i, pollution_state: int):
@@ -146,9 +159,9 @@ func update_resources_based_on_pollution(tile_pos: Vector2i, pollution_state: in
 					if resource == ENERGY:
 						continue
 					elif resource == RECYCABLES:
-						resources[RECYCABLES] += 10
+						resources[RECYCABLES] += 1
 					else:
-						resources[resource] = max(resources[resource] - 10, 0)
+						resources[resource] = max(resources[resource] - 3, 0)
 
 					main_stockpile[resource] += resources[resource]
 			POLLUTION_UNINHABITABLE:
@@ -156,6 +169,16 @@ func update_resources_based_on_pollution(tile_pos: Vector2i, pollution_state: in
 					resources[resource] = 0
 					main_stockpile[resource] = 0
 		update_resource_ui()
+
+func generate_resources():
+	for tile_pos in tile_resources_at_position.keys():
+		var resources = tile_resources_at_position[tile_pos]
+		for resource in resources.keys():
+			var generated = randi_range(0, 1)
+			resources[resource] += generated
+			main_stockpile[resource] += generated
+
+	update_resource_ui()
 
 func update_pollution(tile_pos: Vector2i, pollution_delta: int):
 	if pollution_levels.has(tile_pos):
@@ -581,7 +604,6 @@ func update_resource_ui():
 	rubber_count.text = str(main_stockpile[RUBBER])
 	recycables_count.text = str(main_stockpile[RECYCABLES])
 
-
 func end_turn():
 	for tile_pos in pollution_levels.keys():
 		var tile_id = get_cell_source_id(tile_pos)
@@ -611,6 +633,7 @@ func next_turn():
 	isNight = !isNight
 	if isNight:
 		spread_pollution()
+		generate_resources()
 		turns_till_growth += 1
 		update_resource_ui()
 	update_turn_ui()
@@ -623,7 +646,6 @@ func update_turn_ui():
 
 func _on_turn_button_toggled():
 	next_turn()
-
 func _ready():
 	print(pollution_bar)
 	initialize_pollution()

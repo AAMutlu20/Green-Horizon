@@ -100,8 +100,6 @@ layout_mode = 1
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_flk3k")
 autoplay = true
-bus = &"Music"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_8ewhu")
-bus = &"SFX"
