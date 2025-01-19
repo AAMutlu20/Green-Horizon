@@ -12,4 +12,3 @@ text = "Window Mode"
 
 [node name="Confirm" type="AudioStreamPlayer" parent="." index="1"]
 stream = ExtResource("3_qee7w")
-bus = &"SFX"
