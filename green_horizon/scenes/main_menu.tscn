@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://bgunpxx3n2af6"]
 
-[ext_resource type="Texture2D" uid="uid://d37i2aan2q7n4" path="res://assets/GUI/BG/Background.png" id="1_2g543"]
+[ext_resource type="Texture2D" uid="uid://bpwjwknkyiig8" path="res://assets/GUI/BG/MainBG.png" id="1_2g543"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_81371"]
-[ext_resource type="Texture2D" uid="uid://ba3qph6ha4o7y" path="res://assets/GUI/BG/Green_Horizon.png" id="2_6gk8m"]
+[ext_resource type="Texture2D" uid="uid://0yqus73gw6bu" path="res://assets/GUI/BG/TitleText.png" id="2_6gk8m"]
 [ext_resource type="Texture2D" uid="uid://csvcrpch5ac78" path="res://assets/GUI/Buttons/Play/Play_Normal.png" id="3_7otcx"]
 [ext_resource type="Texture2D" uid="uid://v8dqp5gb656w" path="res://assets/GUI/Buttons/Play/Play_Click.png" id="4_p50rd"]
 [ext_resource type="Texture2D" uid="uid://cac0pue3glpfo" path="res://assets/GUI/Buttons/Play/Play_Hover.png" id="5_fkskm"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://wctwg6o7g6lv" path="res://scenes/options_menu.tscn" id="13_lxgql"]
 [ext_resource type="AudioStream" uid="uid://dedko2buvekhi" path="res://assets/GUI/Music/BGM/Ludum Dare 30 06 - MU.ogg" id="14_flk3k"]
 [ext_resource type="AudioStream" uid="uid://b8j5kqhpfejbo" path="res://assets/GUI/Music/SFX/Select 1.wav" id="15_8ewhu"]
+
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
