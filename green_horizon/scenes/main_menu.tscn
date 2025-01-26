@@ -16,7 +16,6 @@
 [ext_resource type="AudioStream" uid="uid://dedko2buvekhi" path="res://assets/GUI/Music/BGM/Ludum Dare 30 06 - MU.ogg" id="14_flk3k"]
 [ext_resource type="AudioStream" uid="uid://b8j5kqhpfejbo" path="res://assets/GUI/Music/SFX/Select 1.wav" id="15_8ewhu"]
 
-
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15

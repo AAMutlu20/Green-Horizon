@@ -27,11 +27,12 @@ mouse_cursor/custom_image_hotspot=Vector2(6, 6)
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/Gaea-1.3.2/addons/gaea/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
+"res://addons/": "blue",
 "res://assets/": "red",
 "res://audio/": "purple",
 "res://scenes/": "yellow",
