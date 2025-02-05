@@ -33,6 +33,7 @@ var tile_resources_at_position = {}
 
 # Tile Thresholds
 var pollution_thresholds = {
+	# NORMAL TILES
 	2: {POLLUTION_CLEAN: 0, POLLUTION_POLLUTED: 20, POLLUTION_UNINHABITABLE: 50},  # C_WATER
 	5: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 15, POLLUTION_POLLUTED: 25, POLLUTION_UNINHABITABLE: 60},  # C_FIELD
 	9: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 17},  # C_FOREST_C
@@ -43,8 +44,24 @@ var pollution_thresholds = {
 	27: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 15, POLLUTION_POLLUTED: 25, POLLUTION_UNINHABITABLE: 60},  # C_SANDS
 	31: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 22, POLLUTION_POLLUTED: 32, POLLUTION_UNINHABITABLE: 62},  # C_D_HILL
 	35: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 30, POLLUTION_POLLUTED: 45, POLLUTION_UNINHABITABLE: 68},  # C_MOUNTAIN
+	# CITY
+	42: {POLLUTION_CLEAN: 0, POLLUTION_POLLUTED: 35}, # C_CITY_1
+	44: {POLLUTION_CLEAN: 0, POLLUTION_POLLUTED: 35}, # C_CITY_2
+	46: {POLLUTION_CLEAN: 0, POLLUTION_POLLUTED: 38}, # C_CITY_3
+	48: {POLLUTION_CLEAN: 0, POLLUTION_POLLUTED: 40}, # C_CITY_4
+	50: {POLLUTION_CLEAN: 0, POLLUTION_POLLUTED: 45}, # C_CITY_5
+	# UPGRADE TILES
 	39: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 25, POLLUTION_POLLUTED: 45},  # C_REFINERY
-	42: {POLLUTION_CLEAN: 0, POLLUTION_POLLUTED: 35} # C_CITY
+	52: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 21, POLLUTION_POLLUTED: 37}, # C_MINE_1
+	54: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 22, POLLUTION_POLLUTED: 38}, # C_MINE_2
+	56: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 23, POLLUTION_POLLUTED: 39}, # C_MINE_3
+	60: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 20, POLLUTION_POLLUTED: 35, POLLUTION_UNINHABITABLE: 60}, # C_PANEL_1
+	64: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 20, POLLUTION_POLLUTED: 40, POLLUTION_UNINHABITABLE: 65}, # C_PANEL_2
+	68: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 25, POLLUTION_POLLUTED: 45, POLLUTION_UNINHABITABLE: 70}, # C_PANEL_3
+	72: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 28, POLLUTION_POLLUTED: 38, POLLUTION_UNINHABITABLE: 68}, # CD_MINE_1
+	74: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 30, POLLUTION_POLLUTED: 45, POLLUTION_UNINHABITABLE: 70}, # CD_MINE_2
+	78: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 10, POLLUTION_POLLUTED: 20, POLLUTION_UNINHABITABLE: 50}, # CW_PLANT_1
+	81: {POLLUTION_CLEAN: 0, POLLUTION_MILD: 15, POLLUTION_POLLUTED: 25, POLLUTION_UNINHABITABLE: 55}, # CW_PLANT_2
 }
 
 # Tile Resources
@@ -84,19 +101,39 @@ var tile_resources = {
 	55: [METAL, WOOD, RECYCABLES],
 	56: [METAL, WOOD],
 	57: [METAL, WOOD, RECYCABLES],
+	60: [ENERGY],
+	61: [ENERGY, RECYCABLES],
+	62: [ENERGY, RECYCABLES],
+	64: [ENERGY],
+	65: [ENERGY, RECYCABLES],
+	66: [ENERGY, RECYCABLES],
+	68: [ENERGY],
+	69: [ENERGY, RECYCABLES],
+	70: [ENERGY, RECYCABLES],
+	72: [METAL],
+	73: [METAL, RECYCABLES],
+	74: [METAL],
+	75: [METAL, RECYCABLES],
+	76: [RECYCABLES],
+	78: [ENERGY],
+	79: [ENERGY, RECYCABLES],
+	80: [RECYCABLES],
+	81: [ENERGY],
+	82: [ENERGY, RECYCABLES],
+	83: [RECYCABLES],
 }
 
 var tile_names = {
 	2: "River",
 	3: "Water Plant",
-	15: "Hill",
 	4: "Mine",
-	35: "Mountain",
 	5: "Desert Mine",
+	6: "Solar Panel",
+	15: "Hill",
 	23: "Desert",
-	39: "Refinery",
 	27: "Desert Sands",
-	6: "Solar Panel"
+	35: "Mountain",
+	39: "Refinery",
 }
 # Stockpile
 var main_stockpile = {
@@ -565,6 +602,46 @@ func set_tile_state(tile_pos: Vector2i, tile_id: int, state: int, pollution_leve
 				set_cell(tile_pos, 42, Vector2i(0, 0))
 			else:
 				set_cell(tile_pos, 43, Vector2i(0, 0))
+		44: 
+			if pollution_level > 35:
+				set_cell(tile_pos, 45, Vector2i(0, 0))
+			else:
+				set_cell(tile_pos, 44, Vector2i(0, 0))
+		45: 
+			if pollution_level < 35:
+				set_cell(tile_pos, 44, Vector2i(0, 0))
+			else:
+				set_cell(tile_pos, 45, Vector2i(0, 0))
+		46: 
+			if pollution_level > 38:
+				set_cell(tile_pos, 47, Vector2i(0, 0))
+			else:
+				set_cell(tile_pos, 46, Vector2i(0, 0))
+		47: 
+			if pollution_level < 38:
+				set_cell(tile_pos, 46, Vector2i(0, 0))
+			else:
+				set_cell(tile_pos, 47, Vector2i(0, 0))
+		48: 
+			if pollution_level > 40:
+				set_cell(tile_pos, 49, Vector2i(0, 0))
+			else:
+				set_cell(tile_pos, 48, Vector2i(0, 0))
+		49: 
+			if pollution_level < 40:
+				set_cell(tile_pos, 48, Vector2i(0, 0))
+			else:
+				set_cell(tile_pos, 49, Vector2i(0, 0))
+		50: 
+			if pollution_level > 45:
+				set_cell(tile_pos, 51, Vector2i(0, 0))
+			else:
+				set_cell(tile_pos, 50, Vector2i(0, 0))
+		51: 
+			if pollution_level < 45:
+				set_cell(tile_pos, 50, Vector2i(0, 0))
+			else:
+				set_cell(tile_pos, 51, Vector2i(0, 0))
 
 func update_hover_label():
 	var mouse_pos = get_global_mouse_position()

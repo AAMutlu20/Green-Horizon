@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=4 uid="uid://1ycusxoumckf"]
+[gd_scene load_steps=187 format=4 uid="uid://1ycusxoumckf"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_8s2nj"]
 [ext_resource type="Texture2D" uid="uid://b34g7y1qxw5d8" path="res://assets/HexTiles/Desert/DesertPlain/C_DesertPlain.png" id="1_rj2m2"]
@@ -68,11 +68,36 @@
 [ext_resource type="Texture2D" uid="uid://q5xbp4ev6ane" path="res://assets/HexTiles/Classic/Hill/Building/Mild/M_Mine_3.png" id="55_4docb"]
 [ext_resource type="Texture2D" uid="uid://i8uy4gicglua" path="res://assets/HexTiles/Classic/Hill/Building/Polluted/P_Mine.png" id="56_s0did"]
 [ext_resource type="Texture2D" uid="uid://dimseti1cuwq8" path="res://assets/HexTiles/Classic/Hill/Building/Uninhabitable/U_Mine.png" id="57_axvj8"]
+[ext_resource type="Texture2D" uid="uid://dhxpx8o4p75bw" path="res://assets/HexTiles/Desert/DesertSands/Building/Clean/C_SolarPanel_1.png" id="59_d0c1s"]
+[ext_resource type="Texture2D" uid="uid://bu8ptf83lcf8x" path="res://assets/HexTiles/Desert/DesertSands/Building/Mild/M_SolarPanel_1.png" id="60_5tu3b"]
+[ext_resource type="Texture2D" uid="uid://d1tnq2tjgver1" path="res://assets/HexTiles/Desert/DesertSands/Building/Polluted/P_SolarPanel_1.png" id="61_dkxkg"]
+[ext_resource type="Texture2D" uid="uid://ckdvmwa1addv1" path="res://assets/HexTiles/Desert/DesertSands/Building/Uninhabitable/U_SolarPanel_1.png" id="62_ad0yo"]
+[ext_resource type="Texture2D" uid="uid://cn7ybwtgsf6au" path="res://assets/HexTiles/Desert/DesertSands/Building/Clean/C_SolarPanel_2.png" id="63_8fefg"]
+[ext_resource type="Texture2D" uid="uid://c2v25fy0vcxcl" path="res://assets/HexTiles/Desert/DesertSands/Building/Mild/M_SolarPanel_2.png" id="64_dj22l"]
+[ext_resource type="Texture2D" uid="uid://c3tmdl7spfyop" path="res://assets/HexTiles/Desert/DesertSands/Building/Polluted/P_SolarPanel_2.png" id="65_bxpew"]
+[ext_resource type="Texture2D" uid="uid://cseb8wyeqykmq" path="res://assets/HexTiles/Desert/DesertSands/Building/Uninhabitable/U_SolarPanel_2.png" id="66_3fx0s"]
 [ext_resource type="Texture2D" uid="uid://dc4uh8dnqt6gk" path="res://assets/Resources/Materials/Main/Energy.png" id="67_3tgx3"]
+[ext_resource type="Texture2D" uid="uid://bhjteqjs0gwox" path="res://assets/HexTiles/Desert/DesertSands/Building/Clean/C_SolarPanel_3.png" id="67_58ehw"]
+[ext_resource type="Texture2D" uid="uid://ckkkh2f8rwuh8" path="res://assets/HexTiles/Desert/DesertSands/Building/Mild/M_SolarPanel_3.png" id="68_6r8m2"]
 [ext_resource type="Texture2D" uid="uid://bemqqckumprrm" path="res://assets/Resources/Materials/Main/Wood.png" id="69_vrqxx"]
+[ext_resource type="Texture2D" uid="uid://ckvn44msxlrtt" path="res://assets/HexTiles/Desert/DesertSands/Building/Polluted/P_SolarPanel_3.png" id="70_mwhvd"]
 [ext_resource type="Texture2D" uid="uid://duwuwf18w5md6" path="res://assets/Resources/Materials/Main/Metal.png" id="70_orre5"]
 [ext_resource type="Texture2D" uid="uid://dcrorwutg4vjb" path="res://assets/Resources/Materials/Main/Rubber.png" id="71_svu6u"]
+[ext_resource type="Texture2D" uid="uid://brtk8ok37v3dw" path="res://assets/HexTiles/Desert/DesertSands/Building/Uninhabitable/U_SolarPanel_3.png" id="71_w78fw"]
+[ext_resource type="Texture2D" uid="uid://cpsm24kgnal1j" path="res://assets/HexTiles/Desert/DesertMountain/Building/Clean/CD_Mine.png" id="72_5e20e"]
 [ext_resource type="Texture2D" uid="uid://dfomqcpxvmwjv" path="res://assets/Resources/Materials/Main/Recycables.png" id="72_jjxa0"]
+[ext_resource type="Texture2D" uid="uid://jv8cwbcddwk8" path="res://assets/HexTiles/Desert/DesertMountain/Building/Mild/MD_Mine_1.png" id="73_8eq40"]
+[ext_resource type="Texture2D" uid="uid://ddcgjeyel5nmh" path="res://assets/HexTiles/Desert/DesertMountain/Building/Clean/CD_Mine_2.png" id="74_imrga"]
+[ext_resource type="Texture2D" uid="uid://bv1brvd5mhv1u" path="res://assets/HexTiles/Desert/DesertMountain/Building/Mild/MD_Mine_2.png" id="75_j4wpd"]
+[ext_resource type="Texture2D" uid="uid://mjtfalwn1i1q" path="res://assets/HexTiles/Desert/DesertMountain/Building/Polluted/PD_Mine_1.png" id="76_3wge8"]
+[ext_resource type="Texture2D" uid="uid://b6tv8q28aytpw" path="res://assets/HexTiles/Desert/DesertMountain/Building/Uninhabitable/UD_Mine_1.png" id="77_jsxx3"]
+[ext_resource type="Texture2D" uid="uid://cfi40ebf812wp" path="res://assets/HexTiles/Classic/River/Building/Clean/C_WaterPlant.png" id="78_xpiwv"]
+[ext_resource type="Texture2D" uid="uid://ls6hyuk6ns54" path="res://assets/HexTiles/Classic/River/Building/Mild/M_WaterPlant_1.png" id="79_i07rn"]
+[ext_resource type="Texture2D" uid="uid://bl8bf6japnm37" path="res://assets/HexTiles/Classic/River/Building/Polluted/P_WaterPlant.png" id="81_050y3"]
+[ext_resource type="Texture2D" uid="uid://bb5mpslgojkmp" path="res://assets/HexTiles/Classic/River/Building/Clean/C_WaterPlant_2.png" id="82_tucn3"]
+[ext_resource type="Texture2D" uid="uid://dhi4guduxg6wn" path="res://assets/HexTiles/Classic/River/Building/Mild/M_WaterPlant_2.png" id="83_bjpo0"]
+[ext_resource type="Texture2D" uid="uid://lxrayckvqi4o" path="res://assets/HexTiles/Classic/River/Building/Polluted/P_WaterPlant_2.png" id="84_y1qrk"]
+[ext_resource type="Texture2D" uid="uid://de8tgvk85s7f4" path="res://assets/HexTiles/Classic/River/Building/Uninhabitable/U_WaterPlant.png" id="85_tr2k3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7cy6a"]
 resource_name = "DEEP_WATER"
@@ -470,15 +495,165 @@ texture = ExtResource("25_jx2kg")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nnpe2"]
+resource_name = "C_PANEL_1"
+texture = ExtResource("59_d0c1s")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhhyy"]
+resource_name = "M_PANEL_1"
+texture = ExtResource("60_5tu3b")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_upn7t"]
+resource_name = "P_PANEL_1"
+texture = ExtResource("61_dkxkg")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r8ktp"]
+resource_name = "U_PANEL_1"
+texture = ExtResource("62_ad0yo")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_55hkl"]
+resource_name = "C_PANEL_2"
+texture = ExtResource("63_8fefg")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hhvm2"]
+resource_name = "M_PANEL_2"
+texture = ExtResource("64_dj22l")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkmk8"]
+resource_name = "P_PANEL_2"
+texture = ExtResource("65_bxpew")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gl7hb"]
+resource_name = "U_PANEL_2"
+texture = ExtResource("66_3fx0s")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vx2sb"]
+resource_name = "C_PANEL_3"
+texture = ExtResource("67_58ehw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k1px0"]
+resource_name = "M_PANEL_3"
+texture = ExtResource("68_6r8m2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_25hfx"]
 resource_name = "P_FIELD"
 texture = ExtResource("26_gsrns")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eyrn"]
+resource_name = "P_PANEL_3"
+texture = ExtResource("70_mwhvd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8g5qp"]
+resource_name = "U_PANEL_3"
+texture = ExtResource("71_w78fw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_krb2a"]
+resource_name = "CD_MINE_1"
+texture = ExtResource("72_5e20e")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ukut"]
+resource_name = "MD_MINE_1"
+texture = ExtResource("73_8eq40")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4utxy"]
+resource_name = "CD_MINE_2"
+texture = ExtResource("74_imrga")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8xxb5"]
+resource_name = "MD_MINE_2"
+texture = ExtResource("75_j4wpd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tg1p"]
+resource_name = "PD_MINE"
+texture = ExtResource("76_3wge8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cxeqn"]
+resource_name = "UD_MINE"
+texture = ExtResource("77_jsxx3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0rse5"]
+resource_name = "CW_PLANT_1"
+texture = ExtResource("78_xpiwv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i42tf"]
+resource_name = "MW_PLANT_1"
+texture = ExtResource("79_i07rn")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_747oj"]
 resource_name = "U_FIELD"
 texture = ExtResource("43_0psg5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gdmvc"]
+resource_name = "PW_PLANT_1"
+texture = ExtResource("81_050y3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2uptd"]
+resource_name = "CW_PLANT_2"
+texture = ExtResource("82_tucn3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hpa4h"]
+resource_name = "MW_PLANT_2"
+texture = ExtResource("83_bjpo0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6j7eo"]
+resource_name = "PW_PLANT_2"
+texture = ExtResource("84_y1qrk")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_64x6c"]
+resource_name = "UW_PLANT"
+texture = ExtResource("85_tr2k3")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -554,6 +729,31 @@ sources/56 = SubResource("TileSetAtlasSource_d13jq")
 sources/57 = SubResource("TileSetAtlasSource_xkbwk")
 sources/58 = SubResource("TileSetAtlasSource_x5h75")
 sources/59 = SubResource("TileSetAtlasSource_3gqyn")
+sources/60 = SubResource("TileSetAtlasSource_nnpe2")
+sources/61 = SubResource("TileSetAtlasSource_dhhyy")
+sources/62 = SubResource("TileSetAtlasSource_upn7t")
+sources/63 = SubResource("TileSetAtlasSource_r8ktp")
+sources/64 = SubResource("TileSetAtlasSource_55hkl")
+sources/65 = SubResource("TileSetAtlasSource_hhvm2")
+sources/66 = SubResource("TileSetAtlasSource_xkmk8")
+sources/67 = SubResource("TileSetAtlasSource_gl7hb")
+sources/68 = SubResource("TileSetAtlasSource_vx2sb")
+sources/69 = SubResource("TileSetAtlasSource_k1px0")
+sources/70 = SubResource("TileSetAtlasSource_5eyrn")
+sources/71 = SubResource("TileSetAtlasSource_8g5qp")
+sources/72 = SubResource("TileSetAtlasSource_krb2a")
+sources/73 = SubResource("TileSetAtlasSource_8ukut")
+sources/74 = SubResource("TileSetAtlasSource_4utxy")
+sources/75 = SubResource("TileSetAtlasSource_8xxb5")
+sources/76 = SubResource("TileSetAtlasSource_0tg1p")
+sources/77 = SubResource("TileSetAtlasSource_cxeqn")
+sources/78 = SubResource("TileSetAtlasSource_0rse5")
+sources/79 = SubResource("TileSetAtlasSource_i42tf")
+sources/80 = SubResource("TileSetAtlasSource_gdmvc")
+sources/81 = SubResource("TileSetAtlasSource_2uptd")
+sources/82 = SubResource("TileSetAtlasSource_hpa4h")
+sources/83 = SubResource("TileSetAtlasSource_6j7eo")
+sources/84 = SubResource("TileSetAtlasSource_64x6c")
 
 [sub_resource type="LabelSettings" id="LabelSettings_wg5v4"]
 font = ExtResource("47_s3aic")
