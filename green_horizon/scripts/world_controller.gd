@@ -1,3 +1,5 @@
+### WORLD CONTROLLER ### FUNCTIONALITY SCRIPT
+
 extends TileMapLayer
 
 # Pollution States

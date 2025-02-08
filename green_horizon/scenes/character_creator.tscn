@@ -1,0 +1,372 @@
+[gd_scene load_steps=24 format=3 uid="uid://ctubmwq8qynxq"]
+
+[ext_resource type="Script" path="res://scripts/character_creator.gd" id="1_3yiiy"]
+[ext_resource type="Script" path="res://scripts/body.gd" id="2_a4ifi"]
+[ext_resource type="Texture2D" uid="uid://b702g0n7e8k0" path="res://assets/Character/Male/Body/M1_Sheet.png" id="3_loer0"]
+[ext_resource type="Texture2D" uid="uid://bsesk2o0pkqg0" path="res://assets/Character/Female/Body/F1_Sheet.png" id="4_f0vgg"]
+[ext_resource type="Script" path="res://scripts/hair.gd" id="5_680l8"]
+[ext_resource type="Texture2D" uid="uid://cugdhc45ee4rd" path="res://assets/Character/Male/Hair/M1_Sheet.png" id="6_yiiwe"]
+[ext_resource type="Texture2D" uid="uid://e8qjxr6oo8pv" path="res://assets/Character/Female/Hair/F1_Sheet.png" id="7_88fik"]
+[ext_resource type="Script" path="res://scripts/outfit.gd" id="8_84can"]
+[ext_resource type="Texture2D" uid="uid://3guhd2x04npu" path="res://assets/Character/Male/Shirt/S1_Sheet.png" id="9_2q5lh"]
+[ext_resource type="Texture2D" uid="uid://b1cuku62sd6ig" path="res://assets/Character/Female/Outfit/F1_Sheet.png" id="10_be4a3"]
+[ext_resource type="Texture2D" uid="uid://1j3636wgk7ys" path="res://assets/GUI/BG/OptionsBG.png" id="11_vns1m"]
+[ext_resource type="FontFile" uid="uid://b4pp8gmrt821n" path="res://assets/GUI/Font/editundo.ttf" id="12_f0gud"]
+[ext_resource type="Texture2D" uid="uid://nnjwjthj6tci" path="res://assets/GUI/BG/CCBG.png" id="13_oa5tq"]
+[ext_resource type="Texture2D" uid="uid://s37p8i8kk5al" path="res://assets/GUI/Buttons/Blank/Button_Normal.png" id="14_bj2af"]
+[ext_resource type="Texture2D" uid="uid://bb6jxayudbxj6" path="res://assets/GUI/Buttons/Blank/Button_Click.png" id="15_nrcnb"]
+[ext_resource type="Texture2D" uid="uid://djokb2l8h8cmo" path="res://assets/GUI/Buttons/Blank/Button_Hover.png" id="16_k62k8"]
+[ext_resource type="Texture2D" uid="uid://8pvqifrhcapb" path="res://assets/GUI/Buttons/Confirm/Confirm_Normal.png" id="17_x0xpx"]
+[ext_resource type="Texture2D" uid="uid://c3g0w4aoisdqj" path="res://assets/GUI/Buttons/Confirm/Confirm_Clicked.png" id="18_xxgh2"]
+[ext_resource type="Texture2D" uid="uid://bdfivuws4miil" path="res://assets/GUI/Buttons/Confirm/Confirm_Hovered.png" id="19_0uq7i"]
+[ext_resource type="Texture2D" uid="uid://dbkcc6evudj77" path="res://assets/GUI/Buttons/Confirm/Confirm_Disabled.png" id="20_23egl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ek21r"]
+font = ExtResource("12_f0gud")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_hgeix"]
+font = ExtResource("12_f0gud")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_d6lw0"]
+font = ExtResource("12_f0gud")
+font_size = 25
+
+[node name="CharacterCreator" type="Node2D"]
+script = ExtResource("1_3yiiy")
+
+[node name="Skeleton" type="Node2D" parent="."]
+position = Vector2(572, 180)
+scale = Vector2(5, 5)
+
+[node name="Body" type="Node2D" parent="Skeleton"]
+script = ExtResource("2_a4ifi")
+
+[node name="M_Sprite2D" type="Sprite2D" parent="Skeleton/Body"]
+texture = ExtResource("3_loer0")
+hframes = 99
+
+[node name="F_Sprite2D" type="Sprite2D" parent="Skeleton/Body"]
+visible = false
+texture = ExtResource("4_f0vgg")
+hframes = 100
+
+[node name="Hair" type="Node2D" parent="Skeleton"]
+script = ExtResource("5_680l8")
+
+[node name="M_Sprite2D" type="Sprite2D" parent="Skeleton/Hair"]
+texture = ExtResource("6_yiiwe")
+hframes = 99
+
+[node name="F_Sprite2D" type="Sprite2D" parent="Skeleton/Hair"]
+visible = false
+texture = ExtResource("7_88fik")
+hframes = 100
+
+[node name="Outfit" type="Node2D" parent="Skeleton"]
+script = ExtResource("8_84can")
+
+[node name="M_Sprite2D" type="Sprite2D" parent="Skeleton/Outfit"]
+texture = ExtResource("9_2q5lh")
+hframes = 99
+
+[node name="F_Sprite2D" type="Sprite2D" parent="Skeleton/Outfit"]
+visible = false
+texture = ExtResource("10_be4a3")
+hframes = 100
+
+[node name="CreatorScreen" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BG" type="TextureRect" parent="CreatorScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_vns1m")
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton" type="CheckButton" parent="CreatorScreen"]
+custom_minimum_size = Vector2(50, 30)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = -15.5
+offset_right = 89.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_f0gud")
+theme_override_font_sizes/font_size = 25
+text = "Gender M/F"
+
+[node name="CCBG" type="TextureRect" parent="CreatorScreen"]
+anchors_preset = -1
+anchor_left = 0.171875
+anchor_top = 0.583333
+anchor_right = 0.822917
+anchor_bottom = 0.969136
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("13_oa5tq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="ColorRect" parent="CreatorScreen/CCBG"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.166667
+anchor_top = 0.08
+anchor_right = 0.833333
+anchor_bottom = 0.208
+offset_bottom = 8.0
+grow_horizontal = 2
+scale = Vector2(1, 0.8)
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="MainLabel" type="Label" parent="CreatorScreen/CCBG/Name"]
+custom_minimum_size = Vector2(144, 42)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -21.0
+offset_right = 72.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "NAME"
+label_settings = SubResource("LabelSettings_ek21r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="CreatorScreen/CCBG/Name"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 20.0
+offset_right = 200.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_f0gud")
+theme_override_font_sizes/font_size = 25
+placeholder_text = "NAME..."
+
+[node name="Body" type="ColorRect" parent="CreatorScreen/CCBG"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0533333
+anchor_top = 0.38
+anchor_right = 0.253333
+anchor_bottom = 0.7
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="MainLabel" type="Label" parent="CreatorScreen/CCBG/Body"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333333
+anchor_right = 0.666667
+anchor_bottom = 0.2875
+grow_horizontal = 2
+text = "BODY"
+label_settings = SubResource("LabelSettings_hgeix")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InfoLabel" type="Label" parent="CreatorScreen/CCBG/Body"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.366667
+anchor_top = 0.425
+anchor_right = 0.633333
+anchor_bottom = 0.7125
+text = "->"
+label_settings = SubResource("LabelSettings_d6lw0")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollectionButton" type="TextureButton" parent="CreatorScreen/CCBG/Body"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.266667
+anchor_top = 0.375
+anchor_right = 0.723986
+anchor_bottom = 0.75185
+offset_right = 131.402
+offset_bottom = 29.852
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.34299, 0.502467)
+texture_normal = ExtResource("14_bj2af")
+texture_pressed = ExtResource("15_nrcnb")
+texture_hover = ExtResource("16_k62k8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Hair" type="ColorRect" parent="CreatorScreen/CCBG"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.38
+anchor_right = 0.6
+anchor_bottom = 0.7
+offset_right = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="MainLabel" type="Label" parent="CreatorScreen/CCBG/Hair"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333333
+anchor_right = 0.666667
+anchor_bottom = 0.2875
+grow_horizontal = 2
+text = "HAIR"
+label_settings = SubResource("LabelSettings_hgeix")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InfoLabel" type="Label" parent="CreatorScreen/CCBG/Hair"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.366667
+anchor_top = 0.425
+anchor_right = 0.633333
+anchor_bottom = 0.7125
+text = "->"
+label_settings = SubResource("LabelSettings_d6lw0")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollectionButton" type="TextureButton" parent="CreatorScreen/CCBG/Hair"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.266667
+anchor_top = 0.375
+anchor_right = 0.723986
+anchor_bottom = 0.75185
+offset_right = 131.402
+offset_bottom = 29.852
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.34299, 0.502467)
+texture_normal = ExtResource("14_bj2af")
+texture_pressed = ExtResource("15_nrcnb")
+texture_hover = ExtResource("16_k62k8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Outfit" type="ColorRect" parent="CreatorScreen/CCBG"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.746667
+anchor_top = 0.38
+anchor_right = 0.946667
+anchor_bottom = 0.7
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="MainLabel" type="Label" parent="CreatorScreen/CCBG/Outfit"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.0
+offset_right = 25.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "OUTFIT
+"
+label_settings = SubResource("LabelSettings_hgeix")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InfoLabel" type="Label" parent="CreatorScreen/CCBG/Outfit"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.366667
+anchor_top = 0.425
+anchor_right = 0.633333
+anchor_bottom = 0.7125
+text = "->"
+label_settings = SubResource("LabelSettings_d6lw0")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollectionButton" type="TextureButton" parent="CreatorScreen/CCBG/Outfit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.266667
+anchor_top = 0.3625
+anchor_right = 0.723986
+anchor_bottom = 0.73935
+offset_top = 1.0
+offset_right = 131.402
+offset_bottom = 30.852
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.34299, 0.502467)
+texture_normal = ExtResource("14_bj2af")
+texture_pressed = ExtResource("15_nrcnb")
+texture_hover = ExtResource("16_k62k8")
+metadata/_edit_use_anchors_ = true
+
+[node name="ConfirmButton" type="TextureButton" parent="CreatorScreen/CCBG"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.430667
+anchor_top = 0.796
+anchor_right = 0.567863
+anchor_bottom = 0.916592
+offset_right = 197.103
+offset_bottom = 29.852
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.34299, 0.502467)
+disabled = true
+texture_normal = ExtResource("17_x0xpx")
+texture_pressed = ExtResource("18_xxgh2")
+texture_hover = ExtResource("19_0uq7i")
+texture_disabled = ExtResource("20_23egl")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="toggled" from="CreatorScreen/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="CreatorScreen/CheckButton" to="Skeleton/Body" method="_on_check_button_toggled"]
+[connection signal="toggled" from="CreatorScreen/CheckButton" to="Skeleton/Hair" method="_on_check_button_toggled"]
+[connection signal="toggled" from="CreatorScreen/CheckButton" to="Skeleton/Outfit" method="_on_check_button_toggled"]
+[connection signal="text_changed" from="CreatorScreen/CCBG/Name/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="CreatorScreen/CCBG/Body/CollectionButton" to="Skeleton/Body" method="_on_collection_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/CCBG/Hair/CollectionButton" to="Skeleton/Hair" method="_on_collection_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/CCBG/Outfit/CollectionButton" to="Skeleton/Outfit" method="_on_collection_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/CCBG/ConfirmButton" to="." method="_on_confirm_button_pressed"]

@@ -1,3 +1,5 @@
+### CAMERA ### NORMAL SCRIPT
+
 extends Camera2D
 
 @export var moveSpeed: float = 5;

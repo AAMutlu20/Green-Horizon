@@ -1,3 +1,5 @@
+### MAIN MENU ### NORMAL SCRIPT
+
 class_name MainMenu
 extends Control
 

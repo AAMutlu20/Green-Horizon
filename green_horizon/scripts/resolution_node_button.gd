@@ -1,3 +1,5 @@
+### RESOLUTION CONTROLLER ### MENU SCRIPT
+
 extends Control
 
 # Buttons

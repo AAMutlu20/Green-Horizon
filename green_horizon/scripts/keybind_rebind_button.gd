@@ -1,3 +1,5 @@
+### KEYBIND REBIND ### MENU SCRIPT
+
 class_name KeybindRebindButton
 extends Control
 
