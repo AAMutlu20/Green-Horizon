@@ -11,18 +11,24 @@ config_version=5
 [application]
 
 config/name="Green_Horizon"
-run/main_scene="res://scenes/main_menu.tscn"
+run/main_scene="res://scenes/MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://assets/GUI/BG/Mini.png"
 
 [audio]
 
-buses/default_bus_layout=""
+buses/default_bus_layout="res://audio/BUS.tres"
 
 [autoload]
 
-Global="*res://scripts/global.gd"
+Global="*res://scripts/Global/global.gd"
+GameController="*res://scripts/Global/game_controller.gd"
+EventController="*res://scripts/Global/event_controller.gd"
+SettingsSignalBus="*res://scripts/Global/settings_signal_bus.gd"
+DataSignalBus="*res://scripts/Global/settings_data_container.gd"
+SaveManager="*res://scripts/Global/save_manager.gd"
+GameSaveManager="*res://scripts/Global/game_save_manager.gd"
 
 [display]
 
@@ -31,18 +37,22 @@ mouse_cursor/custom_image_hotspot=Vector2(6, 6)
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Gaea-1.3.2/addons/gaea/plugin.cfg")
+enabled=PackedStringArray()
 
 [file_customization]
 
 folder_colors={
-"res://addons/": "blue",
 "res://assets/": "red",
 "res://audio/": "purple",
+"res://resources/": "pink",
 "res://scenes/": "yellow",
-"res://scripts/": "green",
-"res://tilesets/": "orange"
+"res://scripts/": "green"
 }
+
+[global_group]
+
+player=""
+enemy=""
 
 [input]
 
@@ -91,7 +101,7 @@ p_jump={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 ]
 }
-p_move_down={
+p_crouch={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
 ]
@@ -109,6 +119,17 @@ p_move_right={
 p_interact={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+attack={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":120,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":102,"location":0,"echo":false,"script":null)
+]
+}
+p_climb={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

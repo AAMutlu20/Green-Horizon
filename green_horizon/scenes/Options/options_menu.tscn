@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://wctwg6o7g6lv"]
+
+[ext_resource type="Script" path="res://scripts/Options/options.gd" id="1_npguu"]
+[ext_resource type="Texture2D" uid="uid://1j3636wgk7ys" path="res://assets/GUI/BG/OptionsBG.png" id="2_34cuf"]
+[ext_resource type="FontFile" uid="uid://b4pp8gmrt821n" path="res://assets/GUI/Font/editundo.ttf" id="3_fwb7p"]
+[ext_resource type="Texture2D" uid="uid://bh26xkn71lm04" path="res://assets/GUI/Buttons/Exit/Exit_Normal.png" id="4_61mou"]
+[ext_resource type="PackedScene" uid="uid://v4a5yo75aj1d" path="res://scenes/Options/settings_tab_container.tscn" id="4_mlarr"]
+[ext_resource type="Texture2D" uid="uid://ct5os7g6swept" path="res://assets/GUI/Buttons/Exit/Exit_Click.png" id="5_6od5a"]
+[ext_resource type="Texture2D" uid="uid://dao4oipvfptoy" path="res://assets/GUI/Buttons/Exit/Exit_Hover.png" id="6_by5rd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kghqg"]
+font = ExtResource("3_fwb7p")
+font_size = 60
+font_color = Color(0.764706, 0.729412, 0.729412, 1)
+
+[node name="Options_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_npguu")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_34cuf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Margins" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 21
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 21
+theme_override_constants/margin_bottom = 30
+
+[node name="Vertical_Alignment" type="VBoxContainer" parent="Margins"]
+layout_mode = 2
+theme_override_constants/separation = -48
+
+[node name="Title" type="Label" parent="Margins/Vertical_Alignment"]
+layout_mode = 2
+text = "OPTIONS"
+label_settings = SubResource("LabelSettings_kghqg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings_Tab_Container" parent="Margins/Vertical_Alignment" instance=ExtResource("4_mlarr")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ExitOptions" type="TextureButton" parent="Margins/Vertical_Alignment"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("4_61mou")
+texture_pressed = ExtResource("5_6od5a")
+texture_hover = ExtResource("6_by5rd")

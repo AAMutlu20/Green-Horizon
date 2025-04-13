@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5t1858wvopdy"]
+
+[ext_resource type="FontFile" uid="uid://b4pp8gmrt821n" path="res://assets/GUI/Font/editundo.ttf" id="1_0j22a"]
+[ext_resource type="Script" path="res://scripts/Options/keybind_rebind_button.gd" id="1_pkmgp"]
+[ext_resource type="AudioStream" uid="uid://cgbjunpvo35is" path="res://assets/GUI/Music/SFX/Confirm 1.wav" id="3_xek48"]
+
+
+[sub_resource type="LabelSettings" id="LabelSettings_un844"]
+font = ExtResource("1_0j22a")
+font_size = 32
+font_color = Color(0.764706, 0.729412, 0.729412, 1)
+
+[node name="Keybind_Rebind_Button" type="Control" groups=["keybind_button"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pkmgp")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 13.0
+offset_bottom = 11.5
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+text = "ACTION"
+label_settings = SubResource("LabelSettings_un844")
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 200
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(164, 0)
+layout_mode = 2
+toggle_mode = true
+text = "ACTION_KEY"
+
+[node name="Confirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xek48")
+bus = &"SFX"
+
+[connection signal="toggled" from="HBoxContainer/Button" to="." method="_on_button_toggled"]

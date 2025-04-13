@@ -1,0 +1,339 @@
+[gd_scene load_steps=12 format=3 uid="uid://c4r7x6kts15t8"]
+
+[ext_resource type="Script" path="res://scripts/Game/notebook_panel.gd" id="1_0yakg"]
+[ext_resource type="Texture2D" uid="uid://bd05tal2tgpd7" path="res://assets/GUI/BG/NotebookBG.png" id="1_wh2eh"]
+[ext_resource type="FontFile" uid="uid://b4pp8gmrt821n" path="res://assets/GUI/Font/editundo.ttf" id="2_wkr0x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ugiy2"]
+font = ExtResource("2_wkr0x")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lonbw"]
+font = ExtResource("2_wkr0x")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f15g7"]
+font = ExtResource("2_wkr0x")
+font_size = 22
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ll574"]
+font = ExtResource("2_wkr0x")
+font_size = 22
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cpqk3"]
+font = ExtResource("2_wkr0x")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_spndk"]
+font = ExtResource("2_wkr0x")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_omi73"]
+font = ExtResource("2_wkr0x")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b6p62"]
+font = ExtResource("2_wkr0x")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+
+[node name="NotebookPanel" type="Control"]
+visible = false
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0yakg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wh2eh")
+
+[node name="Tasks" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 65.0
+offset_top = -2.0
+offset_right = 565.0
+offset_bottom = -86.0
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="TextureRect/Tasks"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MIssions and Quests"
+label_settings = SubResource("LabelSettings_ugiy2")
+
+[node name="Separator" type="HBoxContainer" parent="TextureRect/Tasks"]
+layout_mode = 2
+alignment = 1
+
+[node name="ClearPollution" type="HBoxContainer" parent="TextureRect/Tasks"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="TextureRect/Tasks/ClearPollution"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "CLEAR POLLUTION"
+label_settings = SubResource("LabelSettings_lonbw")
+
+[node name="Forest" type="HBoxContainer" parent="TextureRect/Tasks"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/Tasks/Forest"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+text = "IN THE FOREST"
+label_settings = SubResource("LabelSettings_f15g7")
+
+[node name="VSeparator" type="VSeparator" parent="TextureRect/Tasks/Forest"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TextureRect/Tasks/Forest"]
+layout_mode = 2
+text = "START"
+
+[node name="TileUpgrade" type="HBoxContainer" parent="TextureRect/Tasks"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="TextureRect/Tasks/TileUpgrade"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "UPGRADE TILES"
+label_settings = SubResource("LabelSettings_lonbw")
+
+[node name="Refinery" type="HBoxContainer" parent="TextureRect/Tasks"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/Tasks/Refinery"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+text = "BUILD/UPGRADE A REFINERY"
+label_settings = SubResource("LabelSettings_ll574")
+
+[node name="VSeparator" type="VSeparator" parent="TextureRect/Tasks/Refinery"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TextureRect/Tasks/Refinery"]
+layout_mode = 2
+tooltip_text = "COST: 50E 70W 20M 15RU 70RE | GENERATES ENERGY AND RUBBER"
+text = "BUILD"
+
+[node name="WaterPlant" type="HBoxContainer" parent="TextureRect/Tasks"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/Tasks/WaterPlant"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+text = "BUILD/UPGRADE A WATER PLANT"
+label_settings = SubResource("LabelSettings_ll574")
+
+[node name="VSeparator" type="VSeparator" parent="TextureRect/Tasks/WaterPlant"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TextureRect/Tasks/WaterPlant"]
+layout_mode = 2
+tooltip_text = "COST: 25E 200W 50M 15RU 100RE | REDUCES POLLUTION"
+text = "BUILD"
+
+[node name="HillMine" type="HBoxContainer" parent="TextureRect/Tasks"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/Tasks/HillMine"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+text = "BUILD/UPGRADE A HILL MINE"
+label_settings = SubResource("LabelSettings_ll574")
+
+[node name="VSeparator" type="VSeparator" parent="TextureRect/Tasks/HillMine"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TextureRect/Tasks/HillMine"]
+layout_mode = 2
+tooltip_text = "COST: 5E 30W 0M 10RU 10RE | GENERATES METAL"
+text = "BUILD"
+
+[node name="MountainMine" type="HBoxContainer" parent="TextureRect/Tasks"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/Tasks/MountainMine"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+text = "BUILD/UPGRADE A MOUNTAIN MINE"
+label_settings = SubResource("LabelSettings_ll574")
+
+[node name="VSeparator" type="VSeparator" parent="TextureRect/Tasks/MountainMine"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TextureRect/Tasks/MountainMine"]
+layout_mode = 2
+tooltip_text = "COST: 5E 150W 40M 70RE 20RU | GENERATES METAL AND WOOD"
+text = "BUILD"
+
+[node name="SolarPanel" type="HBoxContainer" parent="TextureRect/Tasks"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/Tasks/SolarPanel"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+text = "BUILD/UPGRADE A SOLAR PANEL"
+label_settings = SubResource("LabelSettings_ll574")
+
+[node name="VSeparator" type="VSeparator" parent="TextureRect/Tasks/SolarPanel"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TextureRect/Tasks/SolarPanel"]
+layout_mode = 2
+tooltip_text = "COST: 30E 0W 30M 100RE 25RU | GENERATES ENERGY"
+text = "BUILD"
+
+[node name="City" type="HBoxContainer" parent="TextureRect/Tasks"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/Tasks/City"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+text = "UPGRADE THE CITY"
+label_settings = SubResource("LabelSettings_ll574")
+
+[node name="VSeparator" type="VSeparator" parent="TextureRect/Tasks/City"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TextureRect/Tasks/City"]
+layout_mode = 2
+tooltip_text = "COST: 10E 50W 30M 30RE 20RU | GENERATES ALL & REMOVES POLLUTION"
+text = "BUILD"
+
+[node name="TileUpgrade2" type="HBoxContainer" parent="TextureRect/Tasks"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Info" type="Label" parent="TextureRect/Tasks"]
+layout_mode = 2
+text = "Clear pollution missions are available once every 5 turns. Once completed, the mission lowers pollution by 20 in ALL states."
+label_settings = SubResource("LabelSettings_cpqk3")
+autowrap_mode = 3
+
+[node name="VSeparator" type="VSeparator" parent="TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Info" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -552.0
+offset_right = -52.0
+offset_bottom = -98.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="TextureRect/Info"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "USEFUL INFO"
+label_settings = SubResource("LabelSettings_ugiy2")
+
+[node name="Separator" type="HBoxContainer" parent="TextureRect/Info"]
+layout_mode = 2
+alignment = 1
+
+[node name="PollutionInfo" type="Label" parent="TextureRect/Info"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "POLLUTION INFO"
+label_settings = SubResource("LabelSettings_spndk")
+
+[node name="InfoP" type="Label" parent="TextureRect/Info"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "Pollution is your main enemy.
+Every turn, it will spread trough the land, slowly removing resources and finally - making it uninhabitable."
+label_settings = SubResource("LabelSettings_omi73")
+autowrap_mode = 2
+
+[node name="Resources" type="Label" parent="TextureRect/Info"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "RESOURCES"
+label_settings = SubResource("LabelSettings_spndk")
+
+[node name="InfoR" type="Label" parent="TextureRect/Info"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "You have 5 different resources:
+ENERGY, WOOD, METAL, RUBBER, RECYCABLES.
+Each is collected trough a building, with the exception of wood.
+You need them to construct more buildings.
+"
+label_settings = SubResource("LabelSettings_omi73")
+autowrap_mode = 2
+
+[node name="Buildings" type="Label" parent="TextureRect/Info"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Buildings"
+label_settings = SubResource("LabelSettings_spndk")
+
+[node name="InfoB" type="Label" parent="TextureRect/Info"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "Buildings raise pollution when built, some give resources and others help in reducing pollution."
+label_settings = SubResource("LabelSettings_omi73")
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="TextureRect/Info"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "END GOAL"
+label_settings = SubResource("LabelSettings_lonbw")
+
+[node name="Label3" type="Label" parent="TextureRect/Info"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "Construct 3 buildings of every type (except refinery), Max city and keep pollution below 15%."
+label_settings = SubResource("LabelSettings_b6p62")
+autowrap_mode = 2
+
+[connection signal="pressed" from="TextureRect/Tasks/Forest/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureRect/Tasks/Refinery/Button" to="." method="_on_refinery_pressed"]
+[connection signal="pressed" from="TextureRect/Tasks/WaterPlant/Button" to="." method="_on_water_pressed"]
+[connection signal="pressed" from="TextureRect/Tasks/HillMine/Button" to="." method="_on_hill_pressed"]
+[connection signal="pressed" from="TextureRect/Tasks/MountainMine/Button" to="." method="_on_mountain_pressed"]
+[connection signal="pressed" from="TextureRect/Tasks/SolarPanel/Button" to="." method="_on_solar_pressed"]
+[connection signal="pressed" from="TextureRect/Tasks/City/Button" to="." method="_on_city_pressed"]

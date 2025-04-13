@@ -1,0 +1,236 @@
+[gd_scene load_steps=9 format=3 uid="uid://wsh2w6fvj1o0"]
+
+[ext_resource type="Script" path="res://scripts/Credits/credits.gd" id="1_fh7ao"]
+[ext_resource type="FontFile" uid="uid://b4pp8gmrt821n" path="res://assets/GUI/Font/editundo.ttf" id="1_sl2t6"]
+[ext_resource type="Texture2D" uid="uid://cv8honp50coku" path="res://assets/GUI/BG/Space Background.png" id="2_5skm7"]
+[ext_resource type="LabelSettings" uid="uid://6jwpasatgmov" path="res://resources/Labels/credits_title_label_settings.tres" id="3_p46g4"]
+[ext_resource type="LabelSettings" uid="uid://b0dkacfvbqp7p" path="res://resources/Labels/credits_text_label_settings.tres" id="4_xuc1c"]
+[ext_resource type="LabelSettings" uid="uid://ck7v08e1st8v5" path="res://resources/Labels/credits_header_label_settings.tres" id="5_svo2b"]
+[ext_resource type="LabelSettings" uid="uid://bmjcwj207kan" path="res://resources/Labels/credits_category_label_settings.tres" id="6_xm1wb"]
+[ext_resource type="AudioStream" uid="uid://qg26rjt7m1gi" path="res://assets/GUI/Music/BGM/Sketchbook 2024-03-20_01 - CR.ogg" id="8_bgxrh"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fh7ao")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5skm7")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="CreditsContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="CreditsSpacer" type="Control" parent="ScrollContainer/CreditsContainer"]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "GREEN HORIZON"
+label_settings = ExtResource("3_p46g4")
+
+[node name="Spacer10" type="Control" parent="ScrollContainer/CreditsContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="GreenHorizon" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "The transition to green energy is
+not an instant."
+label_settings = ExtResource("4_xuc1c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer12" type="Control" parent="ScrollContainer/CreditsContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="GreenHorizon2" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "It is a process."
+label_settings = ExtResource("4_xuc1c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer1" type="Control" parent="ScrollContainer/CreditsContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="TeamHeader" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "General info"
+label_settings = ExtResource("5_svo2b")
+
+[node name="Spacer2" type="Control" parent="ScrollContainer/CreditsContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ProgrammingLabel" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Programming"
+label_settings = ExtResource("6_xm1wb")
+
+[node name="ProgrammerName" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Andrey mutlu"
+label_settings = ExtResource("4_xuc1c")
+
+[node name="Spacer3" type="Control" parent="ScrollContainer/CreditsContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ArtLabel" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ART"
+label_settings = ExtResource("6_xm1wb")
+
+[node name="ArtistName" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Main art - Andrey mutlu"
+label_settings = ExtResource("4_xuc1c")
+
+[node name="Spacer6" type="Control" parent="ScrollContainer/CreditsContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ArtistName2" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Space assets - deep-fold"
+label_settings = ExtResource("4_xuc1c")
+
+[node name="Spacer7" type="Control" parent="ScrollContainer/CreditsContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ArtistName3" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "mission assets* - anokolisa"
+label_settings = ExtResource("4_xuc1c")
+
+[node name="Spacer8" type="Control" parent="ScrollContainer/CreditsContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ArtistName4" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "base character model - mucho pixels"
+label_settings = ExtResource("4_xuc1c")
+
+[node name="Spacer4" type="Control" parent="ScrollContainer/CreditsContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Music"
+label_settings = ExtResource("6_xm1wb")
+
+[node name="MusicianName" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "SFX - JDWasabi"
+label_settings = ExtResource("4_xuc1c")
+
+[node name="Spacer9" type="Control" parent="ScrollContainer/CreditsContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="MusicianName2" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Music - Tallbeard studios"
+label_settings = ExtResource("4_xuc1c")
+
+[node name="Spacer5" type="Control" parent="ScrollContainer/CreditsContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="SpecialThanksHeader" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Final note"
+label_settings = ExtResource("5_svo2b")
+
+[node name="SpecialThanks2" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Thanks to all who took
+their time to play this
+game."
+label_settings = ExtResource("4_xuc1c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer11" type="Control" parent="ScrollContainer/CreditsContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="SpecialThanks3" type="Label" parent="ScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "I hope you liked playing it
+as much as I loved making it"
+label_settings = ExtResource("4_xuc1c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomSpacer" type="Control" parent="ScrollContainer/CreditsContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.5
+offset_top = -37.0
+offset_right = 36.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_sl2t6")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_bgxrh")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"

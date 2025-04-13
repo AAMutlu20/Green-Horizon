@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://br88g2si22euv"]
+
+[ext_resource type="Script" path="res://scenes/Mission/item_ui.gd" id="1_21yf3"]
+[ext_resource type="Texture2D" uid="uid://bsnfweexr01l5" path="res://assets/Resources/Materials/Trash/Light/Water_Bottle_Single.png" id="1_buhs0"]
+[ext_resource type="FontFile" uid="uid://b4pp8gmrt821n" path="res://assets/GUI/Font/editundo.ttf" id="2_qddpq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ixd5w"]
+font = ExtResource("2_qddpq")
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g3qe5"]
+font = ExtResource("2_qddpq")
+font_size = 36
+font_color = Color(1, 1, 0, 1)
+
+[node name="ItemUI" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+script = ExtResource("1_21yf3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -93.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "VALUE: "
+label_settings = SubResource("LabelSettings_ixd5w")
+
+[node name="Value" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_g3qe5")
+
+[node name="Max" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "/12"
+label_settings = SubResource("LabelSettings_g3qe5")
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+texture = ExtResource("1_buhs0")
+expand_mode = 2
+stretch_mode = 5

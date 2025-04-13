@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bmjcwj207kan"]
+
+[ext_resource type="FontFile" uid="uid://b4pp8gmrt821n" path="res://assets/GUI/Font/editundo.ttf" id="1_fw7is"]
+
+[resource]
+font = ExtResource("1_fw7is")
+font_size = 30
+font_color = Color(0.505882, 0.384314, 0.443137, 1)

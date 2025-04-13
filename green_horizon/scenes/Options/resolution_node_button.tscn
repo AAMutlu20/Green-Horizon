@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsbn0ikq2tohg"]
+
+[ext_resource type="PackedScene" uid="uid://dwkyte7k7f3wb" path="res://scenes/Options/options_display_button.tscn" id="1_2h05e"]
+[ext_resource type="Script" path="res://scripts/Options/resolution_node_button.gd" id="2_4gdpm"]
+[ext_resource type="AudioStream" uid="uid://cgbjunpvo35is" path="res://assets/GUI/Music/SFX/Confirm 1.wav" id="3_muu0q"]
+
+
+[node name="Resolution_Mode_Button" instance=ExtResource("1_2h05e")]
+script = ExtResource("2_4gdpm")
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "Resolution Mode"
+
+[node name="Confirm" type="AudioStreamPlayer" parent="." index="1"]
+stream = ExtResource("3_muu0q")
+bus = &"SFX"

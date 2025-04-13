@@ -1,0 +1,191 @@
+[gd_scene load_steps=10 format=3 uid="uid://v4a5yo75aj1d"]
+
+[ext_resource type="PackedScene" uid="uid://b31g5qypb5dnd" path="res://scenes/Options/window_node_button.tscn" id="1_frgyu"]
+[ext_resource type="PackedScene" uid="uid://c5t1858wvopdy" path="res://scenes/Options/keybind_rebind_button.tscn" id="1_hqs05"]
+[ext_resource type="FontFile" uid="uid://b4pp8gmrt821n" path="res://assets/GUI/Font/editundo.ttf" id="1_y8ge1"]
+[ext_resource type="PackedScene" uid="uid://dsbn0ikq2tohg" path="res://scenes/Options/resolution_node_button.tscn" id="2_6icd7"]
+[ext_resource type="PackedScene" uid="uid://kv4um503hv13" path="res://scenes/Options/audio_slider_settings.tscn" id="3_1abfc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xoidw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_orxvr"]
+font = ExtResource("1_y8ge1")
+font_size = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7b3sw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vsssv"]
+font = ExtResource("1_y8ge1")
+font_size = 32
+
+[node name="Settings_Tab_Container" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabsDisplay" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+current_tab = 2
+
+[node name="Video" type="TabBar" parent="TabsDisplay"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Margin" type="MarginContainer" parent="TabsDisplay/Video"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabsDisplay/Video/Margin"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabsDisplay/Video/Margin/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="HSeparator" type="HSeparator" parent="TabsDisplay/Video/Margin/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xoidw")
+
+[node name="Window_Mode_Button" parent="TabsDisplay/Video/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("1_frgyu")]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="TabsDisplay/Video/Margin/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 36
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xoidw")
+
+[node name="Resolution_Mode_Button" parent="TabsDisplay/Video/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("2_6icd7")]
+layout_mode = 2
+
+[node name="Audio" type="TabBar" parent="TabsDisplay"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Margin" type="MarginContainer" parent="TabsDisplay/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabsDisplay/Audio/Margin"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabsDisplay/Audio/Margin/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Audio_Slider_Settings" parent="TabsDisplay/Audio/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("3_1abfc")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Audio_Slider_Settings2" parent="TabsDisplay/Audio/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("3_1abfc")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Audio_Slider_Settings3" parent="TabsDisplay/Audio/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("3_1abfc")]
+layout_mode = 2
+
+[node name="Keybinds" type="TabBar" parent="TabsDisplay"]
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Margin" type="MarginContainer" parent="TabsDisplay/Keybinds"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabsDisplay/Keybinds/Margin"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabsDisplay/Keybinds/Margin/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="HSeparator" type="HSeparator" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xoidw")
+
+[node name="Camera" type="Label" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "CAMERA SETTINGS"
+label_settings = SubResource("LabelSettings_orxvr")
+
+[node name="Keybind_Rebind_Button" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("1_hqs05")]
+layout_mode = 2
+
+[node name="Keybind_Rebind_Button2" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("1_hqs05")]
+layout_mode = 2
+action_name = "cam_move_down"
+
+[node name="Keybind_Rebind_Button3" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("1_hqs05")]
+layout_mode = 2
+action_name = "cam_move_left"
+
+[node name="Keybind_Rebind_Button4" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("1_hqs05")]
+layout_mode = 2
+action_name = "cam_move_right"
+
+[node name="HSeparator3" type="HSeparator" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7b3sw")
+
+[node name="Player" type="Label" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "PLAYER SETTINGS"
+label_settings = SubResource("LabelSettings_vsssv")
+
+[node name="Keybind_Rebind_Button5" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("1_hqs05")]
+layout_mode = 2
+action_name = "p_move_left"
+
+[node name="Keybind_Rebind_Button6" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("1_hqs05")]
+layout_mode = 2
+action_name = "p_move_right"
+
+[node name="Keybind_Rebind_Button7" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer" instance=ExtResource("1_hqs05")]
+layout_mode = 2
+action_name = "p_jump"
+
+[node name="HSeparator4" type="HSeparator" parent="TabsDisplay/Keybinds/Margin/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7b3sw")

@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://bdbbxqsew1hve"]
+
+[ext_resource type="Script" path="res://scripts/Credits/lose_game_panel.gd" id="1_fsxyp"]
+[ext_resource type="Texture2D" uid="uid://1j3636wgk7ys" path="res://assets/GUI/BG/OptionsBG.png" id="2_r7bek"]
+[ext_resource type="FontFile" uid="uid://b4pp8gmrt821n" path="res://assets/GUI/Font/editundo.ttf" id="3_0lbbh"]
+[ext_resource type="Texture2D" uid="uid://8pvqifrhcapb" path="res://assets/GUI/Buttons/Confirm/Confirm_Normal.png" id="4_xvspk"]
+[ext_resource type="Texture2D" uid="uid://c3g0w4aoisdqj" path="res://assets/GUI/Buttons/Confirm/Confirm_Clicked.png" id="5_gl6p1"]
+[ext_resource type="Texture2D" uid="uid://bdfivuws4miil" path="res://assets/GUI/Buttons/Confirm/Confirm_Hovered.png" id="6_u5e1j"]
+[ext_resource type="Texture2D" uid="uid://dbkcc6evudj77" path="res://assets/GUI/Buttons/Confirm/Confirm_Disabled.png" id="7_esrqd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tj8ll"]
+font = ExtResource("3_0lbbh")
+font_size = 55
+font_color = Color(0.88706, 1, 0.73972, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_268wj"]
+font = ExtResource("3_0lbbh")
+font_size = 32
+
+[node name="Panel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fsxyp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_r7bek")
+
+[node name="lose_title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -131.0
+offset_top = 120.0
+offset_right = 131.0
+offset_bottom = 152.0
+grow_horizontal = 2
+text = "You failed!"
+label_settings = SubResource("LabelSettings_tj8ll")
+
+[node name="lose_message" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Your unresponsible actions have polluted the ecosystem!
+					   • Pollution level is higher than 80%.
+
+Your province is now irreversibly destroyed by pollution."
+label_settings = SubResource("LabelSettings_268wj")
+
+[node name="ContinueButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -118.0
+offset_right = 100.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_xvspk")
+texture_pressed = ExtResource("5_gl6p1")
+texture_hover = ExtResource("6_u5e1j")
+texture_disabled = ExtResource("7_esrqd")
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]

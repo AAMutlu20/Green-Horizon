@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://c7oq72xk1jjhv"]
+
+[ext_resource type="Script" path="res://scripts/Mission/item.gd" id="1_jegt0"]
+[ext_resource type="Texture2D" uid="uid://thwsdy8pp0mu" path="res://assets/Resources/Materials/Trash/Light/Water_Bottle_Sheet.png" id="2_gvw1x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur12w"]
+atlas = ExtResource("2_gvw1x")
+region = Rect2(0, 0, 15, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5ufc"]
+atlas = ExtResource("2_gvw1x")
+region = Rect2(15, 0, 15, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stmyh"]
+atlas = ExtResource("2_gvw1x")
+region = Rect2(30, 0, 15, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymlbo"]
+atlas = ExtResource("2_gvw1x")
+region = Rect2(45, 0, 15, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x54d"]
+atlas = ExtResource("2_gvw1x")
+region = Rect2(60, 0, 15, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrtpe"]
+atlas = ExtResource("2_gvw1x")
+region = Rect2(75, 0, 15, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pevuh"]
+atlas = ExtResource("2_gvw1x")
+region = Rect2(90, 0, 15, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glp7n"]
+atlas = ExtResource("2_gvw1x")
+region = Rect2(105, 0, 15, 57)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qexy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur12w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5ufc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stmyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymlbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x54d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrtpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pevuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glp7n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8umx"]
+size = Vector2(14, 30)
+
+[node name="Item" type="Node2D"]
+z_index = 3
+script = ExtResource("1_jegt0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6qexy")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_q8umx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

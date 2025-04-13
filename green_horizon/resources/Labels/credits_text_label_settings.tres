@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b0dkacfvbqp7p"]
+
+[ext_resource type="FontFile" uid="uid://b4pp8gmrt821n" path="res://assets/GUI/Font/editundo.ttf" id="1_b70js"]
+
+[resource]
+font = ExtResource("1_b70js")
+font_size = 24
+font_color = Color(0.6, 0.458824, 0.466667, 1)

@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://kv4um503hv13"]
+
+[ext_resource type="Script" path="res://scripts/Options/audio_slider_settings.gd" id="1_jr6kn"]
+[ext_resource type="FontFile" uid="uid://b4pp8gmrt821n" path="res://assets/GUI/Font/editundo.ttf" id="1_wwr87"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ti2c0"]
+font = ExtResource("1_wwr87")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_iyt4y"]
+font = ExtResource("1_wwr87")
+font_size = 32
+
+[node name="Audio_Slider_Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jr6kn")
+bus_name = "SFX"
+
+[node name="Margins" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 38
+
+[node name="Audio_Name_Lbl" type="Label" parent="Margins"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Master Volume"
+label_settings = SubResource("LabelSettings_ti2c0")
+
+[node name="VSeparator" type="VSeparator" parent="Margins"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="Margins"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.001
+
+[node name="VSeparator2" type="VSeparator" parent="Margins"]
+layout_mode = 2
+
+[node name="Audio_Num_Lbl" type="Label" parent="Margins"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "99.8"
+label_settings = SubResource("LabelSettings_iyt4y")

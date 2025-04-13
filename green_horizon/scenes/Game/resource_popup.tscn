@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfnw3xhcl2o4s"]
+
+[ext_resource type="Script" path="res://scripts/resource_popup.gd" id="1_3fj5n"]
+[ext_resource type="Texture2D" uid="uid://cdqqf6b1lceop" path="res://assets/GUI/Popup/MissionPopup.png" id="2_u4s85"]
+[ext_resource type="Texture2D" uid="uid://bf4aash8ke1sv" path="res://assets/GUI/Popup/Cards/Forest&Plains.png" id="3_5oe6h"]
+
+[node name="ResourcePopup" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_3fj5n")
+
+[node name="Body" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u4s85")
+
+[node name="Icon" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+offset_left = -15.0
+offset_top = -17.0
+offset_right = 15.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_5oe6h")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 12.0
+metadata/_edit_use_anchors_ = true

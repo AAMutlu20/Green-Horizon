@@ -1,0 +1,40 @@
+   _____ _____  ______ _____ _____ _______ _____ 
+  / ____|  __ \|  ____|  __ \_   _|__   __/ ____|
+ | |    | |__) | |__  | |  | || |    | | | (___  
+ | |    |  _  /|  __| | |  | || |    | |  \___ \ 
+ | |____| | \ \| |____| |__| || |_   | |  ____) |
+  \_____|_|  \_\______|_____/_____|  |_| |_____/ 
+                                                 
+                  GREEN HORIZON                  
+       A Game of Sustainability and Strategy      
+
+-------------------------------------------------
+
+🔹   Mission Tile Set
+   🎨 Modified from *Legacy-Fantasy-High Forest 2.3* by Anakolisa  
+   🔗 [Download Link] https://anokolisa.itch.io/sidescroller-pixelart-sprites-asset-pack-forest-16x16
+
+🔹   Mission Character
+   🕹️ Modified from *Character Animation Asset Pack* by Muchopixels
+	Base character + animations are by Muchopixels
+	Template clothes/styles are by Andrey Mutlu (me)   
+   🔗 [Download Link] https://muchopixels.itch.io/character-animation-asset-pack
+
+🔹   Background Assets
+   🌍 *Pixel Earth and Space Background Generators* by Deep-fold  
+   🔗 [Download Link] https://deep-fold.itch.io 
+
+🔹   Music
+   🎵 *Music Loop Bundle* by Tallbeard  
+   🔗 [Download Link] https://tallbeard.itch.io/music-loop-bundle
+
+🔹   Sound Effects
+   🔊 *8/16-bit Sound Effects Pack* by JDWasabi
+   🔗 [Download Link] https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack
+
+-------------------------------------------------
+
+🛠️ Developed with Godot Engine 
+📜 License: https://godotengine.org/license
+
+-------------------------------------------------
