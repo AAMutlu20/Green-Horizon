@@ -1,0 +1,37 @@
+The game is based on the 13th, 7th and 11th Sustainable Development Goals of the UN.
+I decided to make a game, based on them, because I believe that these goals are one of the most important. Also they hold the widest range of tasks, which will let me more breathing room
+in making my game.
+
+My ]]=]R&D stage went trough 3 phases -> Game theme brainstorming -> A 2D game about transitioning a province from fossil fueled energy to climate-neutral and self-sustaining.
+								 This is a trending topic in the EU, as the Union's politics are looking to
+								 turn the continent into the world's first climate-neutral continent by 2050.
+				                              -> The game will combine a turn-based strategy city-builder with a 2D side scroller/platformer.
+							      -> The main game will be turn based, with pollution management, resource collection and tile upgrades.
+							      -> The side scroller comes into play in the missions that the player can access, to assist them in cleaning pollution.
+
+				  -> SDG research -> 13. Climate action - This will impact the game trough a pollution system. Pollution will spread each turn in each state.
+						     It will be a random number in each state, to make the map feel a bit less universal between playthroughs.
+						     
+						     7. Affordable and Clean Energy - No.7 will be present in the game trough buildings. As the game's aim is to achieve
+										      energy self-sufficiency, the player will have to build up their province with buildings
+										      that will also be a part of progression.
+
+						     11. Sustainable cities and communities - The province is the community. The city becomes more sustainable the more it's invested in.
+											      This is also displayed visually when the player upgrades their city.
+
+				 -> Game Design, Art and Everything else -> Game engine -> Godot, since I learned it's quite good for 2D games and pixel art games in general. Also because
+											   I have not used it before and am eager to try something new out.
+
+								         -> Art -> 2D pixel art, small scale. It is perfect for my city builder and side scroller and it is small enough that
+										   I can focus on other tasks or use external sources to assist me if I can't do something myself.
+
+									 -> Music -> No game is complete without music. I can't compose music and sounds so I will take them form asset packs.
+
+									 -> Game Design -> This includes level design, menus, ui, game mechanics, player satisfaction. I have laid out my
+											   main mechanics so I will continue with the rest. Since the game is about ecology, sustainable
+											   consumption and those types of things, it will have green and eco design. Colour palettes with											   green, orange, brown and grey tints will do the job. Items will involve recyclable material like
+											   plastic bottles, tires, aluminum cans, glass bottles and more. HUDs and Bars will have grass / 
+											   flowers and other flora and begin losing it when the health depletes. Tiles will also go trough
+											   similar stages where they will start of clean of pollution then become more and more polluted
+											   until they become uninhabitable. Buildings will include solar panels, mines, water-energy
+				 							   generators and others. Each building will be tied to a certain tile.

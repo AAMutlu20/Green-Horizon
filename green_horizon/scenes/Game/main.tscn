@@ -755,8 +755,8 @@ sources/79 = SubResource("TileSetAtlasSource_i42tf")
 sources/80 = SubResource("TileSetAtlasSource_gdmvc")
 sources/81 = SubResource("TileSetAtlasSource_2uptd")
 sources/82 = SubResource("TileSetAtlasSource_hpa4h")
-sources/83 = SubResource("TileSetAtlasSource_6j7eo")
 sources/84 = SubResource("TileSetAtlasSource_64x6c")
+sources/83 = SubResource("TileSetAtlasSource_6j7eo")
 
 [sub_resource type="LabelSettings" id="LabelSettings_wg5v4"]
 font = ExtResource("105_sygqt")

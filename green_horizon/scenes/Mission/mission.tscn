@@ -1,25 +1,25 @@
 [gd_scene load_steps=34 format=4 uid="uid://kvxubocvvqh0"]
 
-[ext_resource type="Script" path="res://scripts/Mission/mission.gd" id="1_op4om"]
-[ext_resource type="Texture2D" uid="uid://buen24vng2ihw" path="res://assets/Normal Tiles/Legacy-Fantasy - High Forest 2.3/Trees/Background.png" id="2_knyen"]
-[ext_resource type="Texture2D" uid="uid://1u6rcmry5lrg" path="res://assets/Normal Tiles/Legacy-Fantasy - High Forest 2.3/Trees/Green-Tree.png" id="3_h4cdt"]
-[ext_resource type="Texture2D" uid="uid://crvgbnmi5adt4" path="res://assets/Normal Tiles/Legacy-Fantasy - High Forest 2.3/Trees/Dark-Tree.png" id="4_23pey"]
-[ext_resource type="Texture2D" uid="uid://syiy8cpt471j" path="res://assets/Normal Tiles/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="5_cipi5"]
-[ext_resource type="Texture2D" uid="uid://ctyot8kxvd23a" path="res://assets/Normal Tiles/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="6_3745q"]
-[ext_resource type="Texture2D" uid="uid://dff0gwplb1opd" path="res://assets/Normal Tiles/Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="7_70w8k"]
-[ext_resource type="Texture2D" uid="uid://b0hfgl1thantc" path="res://assets/Normal Tiles/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="8_0ye00"]
-[ext_resource type="PackedScene" uid="uid://d3h4i8bhuhy7h" path="res://scenes/Player/player.tscn" id="9_bg6pk"]
-[ext_resource type="Texture2D" uid="uid://dk65i6pvrl8gk" path="res://assets/GUI/Health/Heart-Full.png" id="10_o8hfu"]
-[ext_resource type="FontFile" uid="uid://b4pp8gmrt821n" path="res://assets/GUI/Font/editundo.ttf" id="11_12plq"]
-[ext_resource type="PackedScene" uid="uid://br88g2si22euv" path="res://scenes/Mission/item_ui.tscn" id="11_ek565"]
-[ext_resource type="PackedScene" uid="uid://dfh3yd8liib65" path="res://scenes/Mission/boar_enemy_brown.tscn" id="12_5ljsl"]
-[ext_resource type="AudioStream" uid="uid://cbq4w8384kot8" path="res://assets/GUI/Music/BGM/Ludum Dare 30 04 - MI.ogg" id="13_pang5"]
-[ext_resource type="PackedScene" uid="uid://dt2fhm0xka3ot" path="res://scenes/Mission/boar_enemy_black.tscn" id="14_2jt6m"]
-[ext_resource type="PackedScene" uid="uid://ewq0tbn5wax1" path="res://scenes/Mission/boar_enemy_white.tscn" id="15_tkb5j"]
-[ext_resource type="PackedScene" uid="uid://c7oq72xk1jjhv" path="res://scenes/Mission/item.tscn" id="17_y84ms"]
+[ext_resource type="Script" path="res://scripts/Mission/mission.gd" id="1_i1nik"]
+[ext_resource type="Texture2D" uid="uid://buen24vng2ihw" path="res://assets/Normal Tiles/Legacy-Fantasy - High Forest 2.3/Trees/Background.png" id="2_3pewk"]
+[ext_resource type="Texture2D" uid="uid://1u6rcmry5lrg" path="res://assets/Normal Tiles/Legacy-Fantasy - High Forest 2.3/Trees/Green-Tree.png" id="3_diab5"]
+[ext_resource type="Texture2D" uid="uid://crvgbnmi5adt4" path="res://assets/Normal Tiles/Legacy-Fantasy - High Forest 2.3/Trees/Dark-Tree.png" id="4_mnd67"]
+[ext_resource type="Texture2D" uid="uid://syiy8cpt471j" path="res://assets/Normal Tiles/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="5_b2nsd"]
+[ext_resource type="Texture2D" uid="uid://ctyot8kxvd23a" path="res://assets/Normal Tiles/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="6_4rr8c"]
+[ext_resource type="Texture2D" uid="uid://dff0gwplb1opd" path="res://assets/Normal Tiles/Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="7_7yvij"]
+[ext_resource type="Texture2D" uid="uid://b0hfgl1thantc" path="res://assets/Normal Tiles/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="8_pxsqg"]
+[ext_resource type="PackedScene" uid="uid://d3h4i8bhuhy7h" path="res://scenes/Player/player.tscn" id="9_45cq3"]
+[ext_resource type="PackedScene" uid="uid://br88g2si22euv" path="res://scenes/Mission/item_ui.tscn" id="10_aotbt"]
+[ext_resource type="Texture2D" uid="uid://dk65i6pvrl8gk" path="res://assets/GUI/Health/Heart-Full.png" id="11_p2587"]
+[ext_resource type="FontFile" uid="uid://b4pp8gmrt821n" path="res://assets/GUI/Font/editundo.ttf" id="12_bm6wb"]
+[ext_resource type="PackedScene" uid="uid://dfh3yd8liib65" path="res://scenes/Mission/boar_enemy_brown.tscn" id="13_t7wgh"]
+[ext_resource type="AudioStream" uid="uid://cbq4w8384kot8" path="res://assets/GUI/Music/BGM/Ludum Dare 30 04 - MI.ogg" id="14_llv6t"]
+[ext_resource type="PackedScene" uid="uid://dt2fhm0xka3ot" path="res://scenes/Mission/boar_enemy_black.tscn" id="15_po0go"]
+[ext_resource type="PackedScene" uid="uid://ewq0tbn5wax1" path="res://scenes/Mission/boar_enemy_white.tscn" id="16_as0ff"]
+[ext_resource type="PackedScene" uid="uid://c7oq72xk1jjhv" path="res://scenes/Mission/item.tscn" id="17_3da0w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e7e15"]
-texture = ExtResource("2_knyen")
+texture = ExtResource("2_3pewk")
 7:0/0 = 0
 8:0/0 = 0
 11:0/0 = 0
@@ -706,7 +706,7 @@ texture = ExtResource("2_knyen")
 55:15/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uglm4"]
-texture = ExtResource("3_h4cdt")
+texture = ExtResource("3_diab5")
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -3675,7 +3675,7 @@ texture = ExtResource("3_h4cdt")
 70:74/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_67sm6"]
-texture = ExtResource("4_23pey")
+texture = ExtResource("4_mnd67")
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -6644,7 +6644,7 @@ texture = ExtResource("4_23pey")
 70:74/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8l750"]
-texture = ExtResource("5_cipi5")
+texture = ExtResource("5_b2nsd")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -7157,7 +7157,7 @@ texture = ExtResource("5_cipi5")
 29:16/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3bqpw"]
-texture = ExtResource("6_3745q")
+texture = ExtResource("6_4rr8c")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -7691,7 +7691,7 @@ texture = ExtResource("6_3745q")
 19:24/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iumnq"]
-texture = ExtResource("7_70w8k")
+texture = ExtResource("7_7yvij")
 1:0/0 = 0
 2:0/0 = 0
 4:0/0 = 0
@@ -8043,7 +8043,7 @@ texture = ExtResource("7_70w8k")
 11:20/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dqxwn"]
-texture = ExtResource("8_0ye00")
+texture = ExtResource("8_pxsqg")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -8346,12 +8346,12 @@ size = Vector2(1045.7, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m67os"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wux86"]
-font = ExtResource("11_12plq")
+font = ExtResource("12_bm6wb")
 font_size = 64
 font_color = Color(0.911164, 0.107721, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_txigr"]
-font = ExtResource("11_12plq")
+font = ExtResource("12_bm6wb")
 font_size = 64
 font_color = Color(3.46541e-06, 0.639733, 0.312627, 1)
 
@@ -8542,7 +8542,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_op4om")
+script = ExtResource("1_i1nik")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_sexk4")
@@ -8597,7 +8597,7 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AABXAf//BAAFAAcAAABXAQAABAAFAAgAAABXAQEABAAFAAkAAABYAQAABAAGAAgAAABYAQEABAAGAAkAAABZAQAABAAHAAgAAABZAQEABAAHAAkAAABaAQAABAAHAAgAAABaAQEABAAHAAkAAABbAQAABAAHAAgAAABbAQEABAAHAAkAAABcAQAABAAIAAgAAABcAQEABAAIAAkAAABdAf//BAAJAAcAAABdAQAABAAJAAgAAABdAQEABAAJAAkAAABGAfb/BAAKAAoAAABGAff/BAAKAAsAAABHAfb/BAALAAoAAABHAff/BAALAAsAAABIAfb/BAAMAAoAAABIAff/BAAMAAsAAABJAfb/BAANAAoAAABJAff/BAANAAsAAABKAfb/BAAOAAoAAABKAff/BAAOAAsAAABHAQIABAAKAAoAAABHAQMABAAKAAsAAABIAQIABAALAAoAAABIAQMABAALAAsAAABJAQIABAAOAAoAAABJAQMABAAOAAsAAADgAPr/AQAqAD8AAADgAPv/AQAqAEAAAADgAPz/AQAqAEEAAADgAP3/AQAqAEIAAADgAP7/AQAqAEMAAADhAPf/AQArADwAAADhAPj/AQArAD0AAADhAPn/AQArAD4AAADhAPr/AQArAD8AAADhAPv/AQArAEAAAADhAPz/AQArAEEAAADhAP3/AQArAEIAAADhAP7/AQArAEMAAADiAPb/AQAsADsAAADiAPf/AQAsADwAAADiAPj/AQAsAD0AAADiAPn/AQAsAD4AAADiAPr/AQAsAD8AAADiAPv/AQAsAEAAAADiAPz/AQAsAEEAAADiAP3/AQAsAEIAAADiAP7/AQAsAEMAAADjAPb/AQAtADsAAADjAPf/AQAtADwAAADjAPj/AQAtAD0AAADjAPn/AQAtAD4AAADjAPr/AQAtAD8AAADjAPv/AQAtAEAAAADjAPz/AQAtAEEAAADjAP3/AQAtAEIAAADjAP7/AQAtAEMAAADkAPb/AQAuADsAAADkAPf/AQAuADwAAADkAPj/AQAuAD0AAADkAPn/AQAuAD4AAADkAPr/AQAuAD8AAADkAPv/AQAuAEAAAADkAPz/AQAuAEEAAADkAP3/AQAuAEIAAADkAP7/AQAuAEMAAADlAPn/AQAvAD4AAADlAPr/AQAvAD8AAADlAPv/AQAvAEAAAADlAPz/AQAvAEEAAADlAP3/AQAvAEIAAADlAP7/AQAvAEMAAADmAPr/AQAqAD8AAADmAPv/AQAqAEAAAADmAPz/AQAqAEEAAADmAP3/AQAqAEIAAADmAP7/AQAqAEMAAADnAPf/AQArADwAAADnAPj/AQArAD0AAADnAPn/AQArAD4AAADnAPr/AQArAD8AAADnAPv/AQArAEAAAADnAPz/AQArAEEAAADnAP3/AQArAEIAAADnAP7/AQArAEMAAADoAPb/AQAsADsAAADoAPf/AQAsADwAAADoAPj/AQAsAD0AAADoAPn/AQAsAD4AAADoAPr/AQAsAD8AAADoAPv/AQAsAEAAAADoAPz/AQAsAEEAAADoAP3/AQAsAEIAAADoAP7/AQAsAEMAAADpAPb/AQAtADsAAADpAPf/AQAtADwAAADpAPj/AQAtAD0AAADpAPn/AQAtAD4AAADpAPr/AQAtAD8AAADpAPv/AQAtAEAAAADpAPz/AQAtAEEAAADpAP3/AQAtAEIAAADpAP7/AQAtAEMAAADqAPb/AQAuADsAAADqAPf/AQAuADwAAADqAPj/AQAuAD0AAADqAPn/AQAuAD4AAADqAPr/AQAuAD8AAADqAPv/AQAuAEAAAADqAPz/AQAuAEEAAADqAP3/AQAuAEIAAADqAP7/AQAuAEMAAADrAPn/AQAvAD4AAADrAPr/AQAvAD8AAADrAPv/AQAvAEAAAADrAPz/AQAvAEEAAADrAP3/AQAvAEIAAADrAP7/AQAvAEMAAADtAPr/AQAqAD8AAADtAPv/AQAqAEAAAADtAPz/AQAqAEEAAADtAP3/AQAqAEIAAADtAP7/AQAqAEMAAADuAPf/AQArADwAAADuAPj/AQArAD0AAADuAPn/AQArAD4AAADuAPr/AQArAD8AAADuAPv/AQArAEAAAADuAPz/AQArAEEAAADuAP3/AQArAEIAAADuAP7/AQArAEMAAADvAPb/AQAsADsAAADvAPf/AQAsADwAAADvAPj/AQAsAD0AAADvAPn/AQAsAD4AAADvAPr/AQAsAD8AAADvAPv/AQAsAEAAAADvAPz/AQAsAEEAAADvAP3/AQAsAEIAAADvAP7/AQAsAEMAAADwAPb/AQAtADsAAADwAPf/AQAtADwAAADwAPj/AQAtAD0AAADwAPn/AQAtAD4AAADwAPr/AQAtAD8AAADwAPv/AQAtAEAAAADwAPz/AQAtAEEAAADwAP3/AQAtAEIAAADwAP7/AQAtAEMAAADxAPb/AQAuADsAAADxAPf/AQAuADwAAADxAPj/AQAuAD0AAADxAPn/AQAuAD4AAADxAPr/AQAuAD8AAADxAPv/AQAuAEAAAADxAPz/AQAuAEEAAADxAP3/AQAuAEIAAADxAP7/AQAuAEMAAADyAPn/AQAvAD4AAADyAPr/AQAvAD8AAADyAPv/AQAvAEAAAADyAPz/AQAvAEEAAADyAP3/AQAvAEIAAADyAP7/AQAvAEMAAAD1APr/AQAqAD8AAAD1APv/AQAqAEAAAAD1APz/AQAqAEEAAAD1AP3/AQAqAEIAAAD1AP7/AQAqAEMAAAD2APf/AQArADwAAAD2APj/AQArAD0AAAD2APn/AQArAD4AAAD2APr/AQArAD8AAAD2APv/AQArAEAAAAD2APz/AQArAEEAAAD2AP3/AQArAEIAAAD2AP7/AQArAEMAAAD3APb/AQAsADsAAAD3APf/AQAsADwAAAD3APj/AQAsAD0AAAD3APn/AQAsAD4AAAD3APr/AQAsAD8AAAD3APv/AQAsAEAAAAD3APz/AQAsAEEAAAD3AP3/AQAsAEIAAAD3AP7/AQAsAEMAAAD4APb/AQAtADsAAAD4APf/AQAtADwAAAD4APj/AQAtAD0AAAD4APn/AQAtAD4AAAD4APr/AQAtAD8AAAD4APv/AQAtAEAAAAD4APz/AQAtAEEAAAD4AP3/AQAtAEIAAAD4AP7/AQAtAEMAAAD5APb/AQAuADsAAAD5APf/AQAuADwAAAD5APj/AQAuAD0AAAD5APn/AQAuAD4AAAD5APr/AQAuAD8AAAD5APv/AQAuAEAAAAD5APz/AQAuAEEAAAD5AP3/AQAuAEIAAAD5AP7/AQAuAEMAAAD6APn/AQAvAD4AAAD6APr/AQAvAD8AAAD6APv/AQAvAEAAAAD6APz/AQAvAEEAAAD6AP3/AQAvAEIAAAD6AP7/AQAvAEMAAACdAAcABAAYAAoAAADMAAMABAASAAoAAADMAAQABAASAAsAAADNAAIABAATAAkAAADNAAMABAATAAoAAADNAAQABAATAAsAAADOAAIABAAUAAkAAADOAAMABAAUAAoAAADOAAQABAAUAAsAAADPAAIABAAVAAkAAADPAAMABAAVAAoAAADPAAQABAAVAAsAAADQAAIABAAWAAkAAADQAAMABAAWAAoAAADQAAQABAAWAAsAAADRAAMABAAXAAoAAADRAAQABAAXAAsAAADSAAMABAAYAAoAAABqAP//BQALAAAAAABLAAIABQAJAAEAAAArAP//BQAJAAEAAAAxAP//BQALAAAAAAA0AP//BQAJAAEAAAA1AP//BQANAAAAAAA3AP//BQAKAAEAAAAiAPr/BQAMAAEAAAAiAPv/BQAMAAIAAAAjAPr/BQANAAEAAAAjAPv/BQANAAIAAAAdAPv/BQANAAwAAAAeAPv/BQAOAAwAAAD4//r/BQALAAkAAAD5//r/BQAMAAkAAAD4//n/BQALAAgAAAD5//n/BQAMAAgAAABmAfT/BAACAAoAAABmAfX/BAADAAUAAABnAfT/BAAEAAUAAABnAfX/BAAEAAUAAABmAe3/BAAEAAcAAABmAe7/BAAEAAcAAABmAe//BAAEAAgAAABmAfD/BAAEAAcAAABmAfH/BAAEAAgAAABmAfL/BAAEAAcAAABmAfP/BAAEAAgAAABjAev/BAABAAUAAABjAez/BAABAAYAAABkAev/BAACAAUAAABkAez/BAACAAYAAABlAev/BAADAAUAAABlAez/BAADAAYAAABmAev/BAAEAAUAAABmAez/BAAEAAYAAABgAev/BAABAAUAAABgAez/BAABAAYAAABhAev/BAACAAUAAABhAez/BAACAAYAAABiAev/BAADAAUAAABiAez/BAADAAYAAABfAev/BAAAAAUAAABfAez/BAAAAAYAAABcAen/BAADAAUAAABcAer/BAADAAYAAABdAen/BAABAAUAAABdAer/BAABAAYAAABeAen/BAACAAUAAABeAer/BAACAAYAAABfAen/BAADAAUAAABfAer/BAADAAYAAABgAen/BAAEAAUAAABgAer/BAAEAAYAAAA/Aen/BAABAAUAAAA/Aer/BAABAAYAAABAAen/BAACAAUAAABAAer/BAACAAYAAABBAen/BAADAAUAAABBAer/BAADAAYAAABCAen/BAABAAUAAABCAer/BAABAAYAAABDAen/BAACAAUAAABDAer/BAACAAYAAABEAen/BAADAAUAAABEAer/BAADAAYAAABFAen/BAABAAUAAABFAer/BAABAAYAAABGAen/BAACAAUAAABGAer/BAACAAYAAABHAen/BAADAAUAAABHAer/BAADAAYAAABIAen/BAABAAUAAABIAer/BAABAAYAAABJAen/BAACAAUAAABJAer/BAACAAYAAABKAen/BAADAAUAAABKAer/BAADAAYAAABLAen/BAABAAUAAABLAer/BAABAAYAAABMAen/BAACAAUAAABMAer/BAACAAYAAABNAen/BAADAAUAAABNAer/BAADAAYAAABOAen/BAABAAUAAABOAer/BAABAAYAAABPAen/BAACAAUAAABPAer/BAACAAYAAABQAen/BAADAAUAAABQAer/BAADAAYAAABRAen/BAABAAUAAABRAer/BAABAAYAAABSAen/BAACAAUAAABSAer/BAACAAYAAABTAen/BAADAAUAAABTAer/BAADAAYAAABUAen/BAABAAUAAABUAer/BAABAAYAAABVAen/BAACAAUAAABVAer/BAACAAYAAABWAen/BAADAAUAAABWAer/BAADAAYAAABXAen/BAABAAUAAABXAer/BAABAAYAAABYAen/BAACAAUAAABYAer/BAACAAYAAABZAen/BAADAAUAAABZAer/BAADAAYAAABaAen/BAABAAUAAABaAer/BAABAAYAAABbAen/BAACAAUAAABbAer/BAACAAYAAAA+Aen/BAAAAAUAAAA+Aer/BAAAAAYAAAA+Aev/BAAAAAcAAAA+Aez/BAAAAAgAAAA+Ae3/BAADAAoAAAA+Ae7/BAADAAUAAAA9Ae3/BAAAAAUAAAA9Ae7/BAAAAAUAAABBAe3/BQAHAAoAAABBAe7/BQAHAAsAAABCAe3/BQAIAAoAAABCAe7/BQAIAAsAAABDAe3/BQAJAAoAAABDAe7/BQAJAAsAAABKAe7/BQAPAAsAAABLAe3/BQAQAAoAAABLAe7/BQAQAAsAAABMAe3/BQARAAoAAABMAe7/BQARAAsAAABYAe7/BQANAAwAAABZAe7/BQAOAAwAAADLAAMABAARAAoAAADLAAQABAARAAsAAADSAAQABAAYAAsAAADUAAMABQALAAAAAADXAAIABQAJAAEAAADbAAAABQALAAAAAADcAP//BQANAAAAAAC6AA0ABQANAAAAAACnAA0ABQALAAAAADClAAwABQAJAAEAABCjAAsABQANAAAAACChAAoABQAMAAAAADCfAAkABQAMAAAAADBZAAIABQALAAAAAABbAAEABQAMAAAAAABdAAAABQAJAAEAAAASAP7/BQAJAAEAAAAWAPz/BQALAAAAAACdAAgABAAYAAsAAACcAAgABAAXAAsAAACcAAcABAAXAAoAAACbAAcABAAWAAoAAACbAAYABAAWAAkAAACaAAYABAAVAAkAAACbAAgABAAWAAsAAACaAAgABAAVAAsAAACZAAgABAAUAAsAAACYAAgABAATAAsAAACXAAgABAASAAsAAACWAAgABAARAAsAAACTAAgABAAYAAsAAACSAAgABAAXAAsAAACRAAgABAAWAAsAAACQAAgABAAVAAsAAACPAAgABAAUAAsAAACOAAgABAATAAsAAACNAAgABAASAAsAAACMAAgABAARAAsAAACMAAcABAARAAoAAACNAAcABAASAAoAAACOAAcABAATAAoAAACPAAcABAAUAAoAAACQAAcABAAVAAoAAACRAAcABAAWAAoAAACSAAcABAAXAAoAAACTAAcABAAYAAoAAACWAAcABAARAAoAAACXAAcABAASAAoAAACYAAcABAATAAoAAACZAAcABAAUAAoAAACaAAcABAAVAAoAAACZAAYABAAUAAkAAACYAAYABAATAAkAAACRAAYABAAWAAkAAACQAAYABAAVAAkAAACPAAYABAAUAAkAAACOAAYABAATAAkAAAA=")
 tile_set = SubResource("TileSet_sexk4")
 
-[node name="Player" parent="." instance=ExtResource("9_bg6pk")]
+[node name="Player" parent="." instance=ExtResource("9_45cq3")]
 physics_interpolation_mode = 1
 z_index = 3
 position = Vector2(22, -28)
@@ -8811,7 +8811,7 @@ position = Vector2(22, -28)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ItemUI" parent="CanvasLayer" instance=ExtResource("11_ek565")]
+[node name="ItemUI" parent="CanvasLayer" instance=ExtResource("10_aotbt")]
 z_index = 0
 offset_left = 0.0
 offset_top = 0.0
@@ -8828,21 +8828,21 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("10_o8hfu")
+texture = ExtResource("11_p2587")
 
 [node name="Heart-2" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("10_o8hfu")
+texture = ExtResource("11_p2587")
 
 [node name="Heart-3" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("10_o8hfu")
+texture = ExtResource("11_p2587")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -8905,27 +8905,27 @@ libraries = {
 "": SubResource("AnimationLibrary_e0fbx")
 }
 
-[node name="Boar_Enemy_1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_5ljsl")]
+[node name="Boar_Enemy_1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_t7wgh")]
 z_index = 3
 position = Vector2(2839, 208)
 player = NodePath("../Player")
 
-[node name="Boar_Enemy_3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_5ljsl")]
+[node name="Boar_Enemy_3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_t7wgh")]
 z_index = 4
 position = Vector2(3893, -31)
 player = NodePath("../Player")
 
-[node name="Boar_Enemy_2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_5ljsl")]
+[node name="Boar_Enemy_2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_t7wgh")]
 z_index = 3
 position = Vector2(1864, -16)
 player = NodePath("../Player")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_pang5")
+stream = ExtResource("14_llv6t")
 autoplay = true
 bus = &"SFX"
 
-[node name="Boar_Enemy_Black" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_2jt6m")]
+[node name="Boar_Enemy_Black" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_po0go")]
 z_index = 3
 position = Vector2(4970, -159)
 player = NodePath("../Player")
@@ -8933,7 +8933,7 @@ speed = 90
 chase_speed = 200
 acl = 400
 
-[node name="Boar_Enemy_Black2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_2jt6m")]
+[node name="Boar_Enemy_Black2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_po0go")]
 z_index = 3
 position = Vector2(4976, 33)
 player = NodePath("../Player")
@@ -8941,7 +8941,7 @@ speed = 90
 chase_speed = 200
 acl = 400
 
-[node name="Boar_Enemy_Black3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_2jt6m")]
+[node name="Boar_Enemy_Black3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_po0go")]
 z_index = 3
 position = Vector2(2371, 128)
 player = NodePath("../Player")
@@ -8949,7 +8949,7 @@ speed = 90
 chase_speed = 200
 acl = 400
 
-[node name="Boar_Enemy_White" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_tkb5j")]
+[node name="Boar_Enemy_White" parent="." node_paths=PackedStringArray("player") instance=ExtResource("16_as0ff")]
 z_index = 4
 position = Vector2(5968, 33)
 player = NodePath("../Player")
@@ -8957,40 +8957,40 @@ speed = 100
 chase_speed = 200
 acl = 440
 
-[node name="Item" parent="." instance=ExtResource("17_y84ms")]
+[node name="Item" parent="." instance=ExtResource("17_3da0w")]
 position = Vector2(-293, -81)
 
-[node name="Item2" parent="." instance=ExtResource("17_y84ms")]
+[node name="Item2" parent="." instance=ExtResource("17_3da0w")]
 position = Vector2(1139, -9)
 
-[node name="Item3" parent="." instance=ExtResource("17_y84ms")]
+[node name="Item3" parent="." instance=ExtResource("17_3da0w")]
 position = Vector2(1930, -28)
 
-[node name="Item4" parent="." instance=ExtResource("17_y84ms")]
+[node name="Item4" parent="." instance=ExtResource("17_3da0w")]
 position = Vector2(2301, -37)
 
-[node name="Item6" parent="." instance=ExtResource("17_y84ms")]
+[node name="Item6" parent="." instance=ExtResource("17_3da0w")]
 position = Vector2(2558, -330)
 
-[node name="Item7" parent="." instance=ExtResource("17_y84ms")]
+[node name="Item7" parent="." instance=ExtResource("17_3da0w")]
 position = Vector2(3325, 49)
 
-[node name="Item8" parent="." instance=ExtResource("17_y84ms")]
+[node name="Item8" parent="." instance=ExtResource("17_3da0w")]
 position = Vector2(4046, 78)
 
-[node name="Item9" parent="." instance=ExtResource("17_y84ms")]
+[node name="Item9" parent="." instance=ExtResource("17_3da0w")]
 position = Vector2(4584, -204)
 
-[node name="Item10" parent="." instance=ExtResource("17_y84ms")]
+[node name="Item10" parent="." instance=ExtResource("17_3da0w")]
 position = Vector2(5318, -65)
 
-[node name="Item11" parent="." instance=ExtResource("17_y84ms")]
+[node name="Item11" parent="." instance=ExtResource("17_3da0w")]
 position = Vector2(5560, -93)
 
-[node name="Item12" parent="." instance=ExtResource("17_y84ms")]
+[node name="Item12" parent="." instance=ExtResource("17_3da0w")]
 position = Vector2(6181, -9)
 
-[node name="Item13" parent="." instance=ExtResource("17_y84ms")]
+[node name="Item13" parent="." instance=ExtResource("17_3da0w")]
 position = Vector2(6529, -187)
 
 [connection signal="body_entered" from="KillzoneArea2" to="Player" method="_on_killzone_area_2_body_entered"]
